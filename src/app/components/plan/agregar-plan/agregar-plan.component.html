@@ -1,0 +1,70 @@
+<div class="uk-section-small uk-section-default header  ">
+  <div class="uk-container uk-container-large">
+      <h1>Analisís</h1>
+      <ul class="uk-breadcrumb">
+          <li><a routerLink="/">Inicio</a></li>
+          <li><a>Agregar Plan</a></li>
+      </ul>
+  </div>
+</div>
+
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+
+        <form class="uk-grid-small" uk-grid [formGroup]="data" (ngSubmit)="agregar()">
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">Candidato </label>
+            <textarea class="uk-textarea" formControlName="candidato"></textarea>
+          </div>
+
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">Estudios </label>
+            <textarea class="uk-textarea" formControlName="estudios"></textarea>
+          </div>
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">electrocardiograma </label>
+            <textarea class="uk-textarea" formControlName="electrocardiograma"></textarea>
+          </div>
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">ecocardiograma </label>
+            <textarea class="uk-textarea" formControlName="ecocardiograma"></textarea>
+          </div>
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">esfuerzo </label>
+            <textarea class="uk-textarea" formControlName="esfuerzo"></textarea>
+          </div>
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">interconsulta </label>
+            <textarea class="uk-textarea" formControlName="interconsulta"></textarea>
+          </div>
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">descripcion_interconsulta </label>
+            <textarea class="uk-textarea" formControlName="descripcion_interconsulta"></textarea>
+          </div>
+
+          
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">Control en </label>
+            <textarea class="uk-textarea" formControlName="descripcion_interconsulta"></textarea>
+          </div>
+         
+          <div class="uk-width-1-1@s uk-flex uk-flex-center">
+            <button class="uk-button uk-button-primary submitbutton" type="submit" [disabled]="!data.valid">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

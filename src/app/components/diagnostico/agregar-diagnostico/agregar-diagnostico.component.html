@@ -1,0 +1,68 @@
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large">
+    <h1><span class="ion-speedometer"></span> Agregar Objetivo</h1>
+    <ul class="uk-breadcrumb">
+      <li><a routerLink="">Inicio</a></li>
+      <li><a routerLink="/usuario">Usuarios</a></li>
+      <li><span>Agregar Objetivo</span></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+
+        <form class="uk-grid-small" uk-grid [formGroup]="data" (ngSubmit)="agregar()">
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Hipertrofia</label>
+            <select class="uk-select" formControlName="Hipertrofia">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Bajar de Peso</label>
+            <select class="uk-select" formControlName="bajar_peso">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Ganancia de Fuerza</label>
+            <select class="uk-select" formControlName="Ganancia_fuerza">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Potencia</label>
+            <select class="uk-select" formControlName="Potencia">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Mejorar capacidad aerobica</label>
+            <select class="uk-select" formControlName="capacidad_aerobica">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s uk-flex uk-flex-center">
+            <button class="uk-button uk-button-primary submitbutton" type="submit" [disabled]="!data.valid">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1407 @@
+<div class="uk-section-small uk-section-default header  ">
+  <div class="uk-container uk-container-large">
+    <h1>Ver Examen Fisico</h1>
+    <ul class="uk-breadcrumb">
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/usuario">Usuarios</a></li>
+      <li><a>Ver Examen Fisico</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+        <div class="uk-position-relative"  tabindex="-1"   uk-slideshow>
+          <form  [formGroup]="data" >
+              <ul class="uk-slideshow-items">
+              <!--PARTE 1-->
+              <li>
+                <div class="uk-cover-container">
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      EXAMEN FISICO
+                    </h1>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Talla</label>
+                    <input class="uk-input" type="number" [(ngModel)]="examen.talla" disabled formControlName="talla" [(ngModel)]="examen.talla" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Peso</label>
+                    <input class="uk-input" type="number" [(ngModel)]="examen.peso" disabled formControlName="peso" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">% Grasa</label>
+                    <input class="uk-input" type="number" [(ngModel)]="examen.por_grasa" disabled formControlName="por_grasa" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">% Musculo</label>
+                    <input class="uk-input" type="number" [(ngModel)]="examen.por_musculo" disabled formControlName="por_musculo" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Grasa Visceral</label>
+                    <input class="uk-input" type="number" [(ngModel)]="examen.grasa_visceral" disabled formControlName="grasa_visceral" />
+                  </div>
+                </div>
+              </li>
+              <!--FIN PARTE 1-->
+
+              <!--PARTE 2-->
+             <li>
+                
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Signos Vitales
+                    </h1>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Presion Arterial</label>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Sistolica</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.sistolica" disabled formControlName="sistolica" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Diastolica</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.diastolica" disabled formControlName="diastolica" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Frecuencia Cardiaca</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.frecuencia_cardiaca" disabled formControlName="frecuencia_cardiaca" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Frecuencia Respiratoria</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.frecuencia_respiratoria" disabled formControlName="frecuencia_respiratoria" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Temperatura</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.temperatura" disabled formControlName="temperatura" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">SatO2</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.sato2" disabled formControlName="sato2" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Hidratacion</label>
+                    <select class="uk-select" [(ngModel)]="examen.hidratacion" disabled formControlName="hidratacion">
+                      <option value="0">Hidratado</option>
+                      <option value="1">DHT I</option>
+                      <option value="2">DHT II</option>
+                      <option value="3">DHT III</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">FiO2</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.fio2" disabled formControlName="fio2" />
+                  </div>
+
+               
+
+                
+              </li>
+              <!--FINAL PARTE 2-->
+
+              <!-- PARTE 3-->
+
+             <li>
+                <div class="uk-cover-container">
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Cabeza y Cuello
+                    </h1>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Soplo carotideo</label>
+                    <select class="uk-select" [(ngModel)]="examen.soplo_carotideo" disabled formControlName="soplo_carotideo">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Irgurgitación yugular</label>
+                    <select class="uk-select" [(ngModel)]="examen.ingurgitacion_yugular" disabled formControlName="ingurgitacion_yugular">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.ingurgitacion_yugular == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Grado</label>
+                    <select class="uk-select" [(ngModel)]="examen.grado" disabled formControlName="grado">
+                      <option value="0">GRADO I</option>
+                      <option value="1">GRADO II</option>
+                      <option value="2">GRADO III</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <!--FINAL PARTE 3-->
+
+              <!--PARTE 4-->
+
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Torax 
+                    </h1>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Descripcion Torax</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.descripcion_torax" disabled formControlName="descripcion_torax" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Cardiovascular</label>
+                    
+                  </div>
+                
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Ruidos Cardiacos</label>
+                    <select class="uk-select" [(ngModel)]="examen.ruidos_cardiacos" disabled formControlName="ruidos_cardiacos">
+                      <option value="1">Ritmicos</option>
+                      <option value="0">Arritimicos</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Soplos</label>
+                    <select class="uk-select" [(ngModel)]="examen.soplos" disabled formControlName="soplos">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.soplos == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Pulmonar</label>
+                    <select class="uk-select" [(ngModel)]="examen.pulmonar" disabled formControlName="pulmonar">
+                      <option value="1">I</option>
+                      <option value="2">II</option>
+                      <option value="3">III</option>
+                      <option value="4">IV</option>
+                      <option value="5">V</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.soplos == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Aortico</label>
+                    <select class="uk-select" [(ngModel)]="examen.aortico" disabled formControlName="aortico">
+                      <option value="1">I</option>
+                      <option value="2">II</option>
+                      <option value="3">III</option>
+                      <option value="4">IV</option>
+                      <option value="5">V</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.soplos == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Mitral</label>
+                    <select class="uk-select" [(ngModel)]="examen.mitral" disabled formControlName="mitral">
+                      <option value="1">I</option>
+                      <option value="2">II</option>
+                      <option value="3">III</option>
+                      <option value="4">IV</option>
+                      <option value="5">V</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.soplos == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Tricuspideo</label>
+                    <select class="uk-select" [(ngModel)]="examen.tricuspideo" disabled formControlName="tricuspideo">
+                      <option value="1">I</option>
+                      <option value="2">II</option>
+                      <option value="3">III</option>
+                      <option value="4">IV</option>
+                      <option value="5">V</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Soplo Abdominal</label>
+                    <select class="uk-select" [(ngModel)]="examen.soplo_abdominal" disabled formControlName="soplo_abdominal">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Descripción Pulmonar </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.descripcion_pulmonar" disabled formControlName="descripcion_pulmonar" />
+                  </div>
+
+                  <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                    <label><input class="uk-checkbox" type="checkbox" [(ngModel)]="examen.murmullo_vesicular" disabled formControlName="murmullo_vesicular">Murmullo
+                      vesicular</label>
+                    <label><input class="uk-checkbox" type="checkbox" [(ngModel)]="examen.sibilancias" disabled formControlName="sibilancias">Sibilancias</label>
+                    <label><input class="uk-checkbox" type="checkbox" [(ngModel)]="examen.roncus" disabled formControlName="roncus">Roncus</label>
+                    <label><input class="uk-checkbox" type="checkbox" [(ngModel)]="examen.estertores" disabled formControlName="estertores">Estertores</label>
+                  </div>
+
+                </div>
+              </li>
+              <!--FINAL PARTE 4-->
+
+              <!--PARTE 5-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Abdomen
+                    </h1>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Abdomen </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.descripcion_abdomen" disabled formControlName="descripcion_abdomen" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Dolor</label>
+                    <select class="uk-select" [(ngModel)]="examen.dolor" disabled formControlName="dolor">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.dolor == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Descripción Dolor </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.descripcion_dolor" disabled formControlName="descripcion_dolor" />
+                  </div>
+
+
+                  <div class="uk-width-1-1@s">
+                    <h3>
+                      Puño Percusión
+                    </h3>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Izquierda</label>
+                    <select class="uk-select" [(ngModel)]="examen.percusion_izquierda" disabled formControlName="percusion_izquierda">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Derecha</label>
+                    <select class="uk-select" [(ngModel)]="examen.percusion_derecha" disabled formControlName="percusion_derecha">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Hernia umbilical</label>
+                    <select class="uk-select" [(ngModel)]="examen.hernia_umbilical" disabled formControlName="hernia_umbilical">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Hernia inguinal</label>
+                    <select class="uk-select" [(ngModel)]="examen.hernia_inguinal" disabled formControlName="hernia_inguinal">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.hernia_inguinal == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Hernia inguinal</label>
+                    <select class="uk-select" [(ngModel)]="examen.descripcion_hernia_inguinal" disabled formControlName="descripcion_hernia_inguinal">
+                      <option value="1">Derecha</option>
+                      <option value="2">Izquierda</option>
+                      <option value="3">Bilateral</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Masas</label>
+                    <select class="uk-select" [(ngModel)]="examen.masas" disabled formControlName="masas">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.masas == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Descripción Masas </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.descripcion_masas" disabled formControlName="descripcion_masas" />
+                  </div>
+
+                </div>
+              </li>
+              <!--FINAL PARTE 5-->
+
+              <!--PARTE 6-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Genitourinario
+                    </h1>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Genitourinario </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.genitourinario" disabled formControlName="genitourinario" />
+                  </div>
+
+                </div>
+              </li>
+              <!--FINAL PARTE 6-->
+
+
+              <!--PARTE 7-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Extremidades
+                    </h1>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extremidades</label>
+                    <select class="uk-select" [(ngModel)]="examen.extremidades" disabled formControlName="extremidades">
+                      <option value="1">Simetricas</option>
+                      <option value="0">Asimetricas</option>
+                    </select>
+                  </div>
+
+
+                  <!--Derecha-->
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Derecha
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Edema</label>
+                    <select class="uk-select" [(ngModel)]="examen.ex_edema_derecha" disabled formControlName="ex_edema_derecha">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.ex_edema_derecha == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Grado Edema</label>
+                    <select class="uk-select" [(ngModel)]="examen.gra_ex_edema_derecha" disabled formControlName="gra_ex_edema_derecha">
+                      <option value="1">GRADO I</option>
+                      <option value="2">GRADO II</option>
+                      <option value="3">GRADO III</option>
+                    </select>
+                  </div>
+                  <br>
+
+                  <div class="uk-width-1-1@s">
+                    <h5>
+                      Pulsos Distales
+                    </h5>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Braquial</label>
+                    <select class="uk-select" [(ngModel)]="examen.braquial" disabled formControlName="braquial">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Radial</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="radial">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Femoral</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="femoral">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Poplitea</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="poplitea">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Pedia</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="pedia">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+                  <!--FIN Derecha-->
+
+
+
+                </div>
+              </li>
+              <!--FINAL PARTE 7-->
+
+              <!--PARTE 8-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Extremidades
+                    </h1>
+                  </div>
+
+                  <!--Izquierda-->
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Izquierda
+                    </h1>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Edema</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="ex_edema_izquierda">
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-3@s" *ngIf="data.value.ex_edema_izquierda == 1">
+                    <label class="uk-form-label" for="form-stacked-text">Grado Edema</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="gra_ex_edema_izquierda">
+                      <option value="1">GRADO I</option>
+                      <option value="2">GRADO II</option>
+                      <option value="3">GRADO III</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <h5>
+                      Pulsos Distales
+                    </h5>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Braquial</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="braquial_izq">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Radial</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="radial_izq">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Femoral</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="femoral_izq">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Poplitea</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="poplitea_izq">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Pedia</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="pedia_izq">
+                      <option value="0">-</option>
+                      <option value="1">+</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                      <option value="4">++++</option>
+                    </select>
+                  </div>
+
+                  <!--FIN Izquierda-->
+
+
+                </div>
+              </li>
+              <!--FINAL PARTE 8-->
+
+
+
+              <!--PARTE 9-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Columna Vertebral
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Cervical </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cervical" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cervical_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cervical_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Inclinación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cervical_inclinacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Inclinación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cervical_inclinacion_izquierda" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cervical_rotacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cervical_rotacion_izquierda" />
+                  </div>
+
+                </div>
+              </li>
+              <!--PARTE 9-->
+
+
+
+              <!--PARTE 10-->
+
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Columna Vertebral
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">dorsolumbar </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dorsolumbar" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dorsolumbar_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dorsolumbar_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Inclinación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dorsolumbar_inclinacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Inclinación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dorsolumbar_inclinacion_izquierda" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dorsolumbar_rotacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dorsolumbar_rotacion_izquierda" />
+                  </div>
+
+                </div>
+              </li>
+              <!--FINAL PARTE 10-->
+
+
+              <!--PARTE 11-->
+
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Hombro Derecho
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Hombro Derecho </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_der_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_der_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Abduccion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_der_inclinacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Aduccion</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_der_inclinacion_izquierda" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_der_rotacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_der_rotacion_izquierda" />
+                  </div>
+
+                </div>
+              </li>
+              <!--PARTE 11-->
+
+              <!--PARTE 12-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Hombro Izquierdo
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Hombro Izquierdo </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_izq_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_izq_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Abduccion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_izq_inclinacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Aduccion</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_izq_inclinacion_izquierda" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_izq_rotacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="hombro_izq_rotacion_izquierda" />
+                  </div>
+
+                </div>
+              </li>
+              <!--PARTE 12-->
+
+
+
+              <!--PARTE 13-->
+
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Codo Derecho
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Codo Derecho </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_der_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_der_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Abduccion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_der_inclinacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Aduccion</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_der_inclinacion_izquierda" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_der_rotacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_der_rotacion_izquierda" />
+                  </div>
+
+                </div>
+              </li>
+              <!--PARTE 13-->
+
+              <!--PARTE 14-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Codo Izquierdo
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Hombro Izquierdo </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_izq_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_izq_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Abduccion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_izq_inclinacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Aduccion</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_izq_inclinacion_izquierda" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_izq_rotacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="codo_izq_rotacion_izquierda" />
+                  </div>
+
+                </div>
+              </li>
+              <!--PARTE 14-->
+
+
+              <!--PARTE 13-->
+
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Muñenca Derecha
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Muñenca Derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="muneca_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="muneca_der_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="muneca_der_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Desviacion cubital</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="desviacion_cubital_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Desviacion radial</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="desviacion_radial_der" />
+                  </div>
+
+                </div>
+              </li>
+              <!--PARTE 13-->
+
+              <!--PARTE 14-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Muñeca Izquierda
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Muñeca Izquierda</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="muneca_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="muneca_izq_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="muneca_izq_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Desviacion cubital </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="desviacion_cubital_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Desviacion radial</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="desviacion_radial_izq" />
+                  </div>
+
+                </div>
+              </li>
+              <!--PARTE 14-->
+
+              <li>
+                <div class="uk-width-1-1@s">
+                  <h1>
+                    OSTEOMUSCULAR
+                  </h1>
+                </div>
+                <div class="uk-width-1-1@s">
+                  <h4>
+                    Dedos Mano
+                  </h4>
+                </div>
+
+                <div class="uk-width-1-1@s">
+                  <label class="uk-form-label" for="form-stacked-text">Dedos Mano derecha</label>
+                  <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dedos_derecha" />
+                </div>
+
+                <div class="uk-width-1-1@s">
+                  <label class="uk-form-label" for="form-stacked-text">Dedos Mano izquierda</label>
+                  <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dedos_izquierda" />
+                </div>
+              </li>
+
+              <!--Parte 16-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Cadera
+                    </h4>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Cadera Derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_der_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_der_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Abduccion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_der_inclinacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Aduccion</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_der_inclinacion_izquierda" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_der_rotacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_der_rotacion_izquierda" />
+                  </div>
+
+                </div>
+              </li>
+              <!--Parte 16-->
+
+              <!--parte 17-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Cadera Izquierda
+                    </h4>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Cadera Izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_izq_flexion" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_izq_extension" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Abduccion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_izq_inclinacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Aduccion</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_izq_inclinacion_izquierda" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación derecha </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_izq_rotacion_derecha" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rotación izquierda </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="cadera_izq_rotacion_izquierda" />
+                  </div>
+
+                </div>
+              </li>
+              <!--parte 17-->
+
+              <!--Parte 18-->
+             
+
+              <!--Parte 19-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Rodilla derecha
+                    </h4>
+                  </div>
+
+
+                  <div class="uk-width-1-3@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rodilla</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="rodilla_der">
+                      <option value="1">Valgo</option>
+                      <option value="2">Varo </option>
+                    </select>
+                  </div>
+                  
+
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="rodilla_flexion_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="rodilla_extension_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Grado </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="rodilla_grado_der" />
+                  </div>
+
+                </div>
+              </li>
+              <!--Parte 19-->
+
+              <!--Parte 20-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Rodilla izquierda
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-3@s">
+                    <label class="uk-form-label" for="form-stacked-text">Rodilla</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="rodilla_izq">
+                      <option value="1">Valgo</option>
+                      <option value="2">Varo </option>
+                    </select>
+                  </div>
+
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="rodilla_flexion_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="rodilla_extension_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Grado </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="rodilla_grado_izq" />
+                  </div>
+
+                </div>
+              </li>
+              <!--Parte 20-->
+
+
+              <!--Parte 21-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Tobillo derecha
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-3@s">
+                    <label class="uk-form-label" for="form-stacked-text">Tobillo</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="tobillo_der">
+                      <option value="1">Valgo</option>
+                      <option value="2">Varo </option>
+                    </select>
+                  </div>
+
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="tobillo_flexion_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="tobillo_extension_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Grado </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="tobillo_grado_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Inversion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="inversion_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Eversion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="eversion_der" />
+                  </div>
+
+                </div>
+              </li>
+              <!--Parte 21-->
+
+              <!--Parte 22-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Tobillo izquierda
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-3@s">
+                    <label class="uk-form-label" for="form-stacked-text">Tobillo</label>
+                    <select class="uk-select" [(ngModel)]="examen.talla" disabled formControlName="tobillo_izq">
+                      <option value="1">Valgo</option>
+                      <option value="2">Varo </option>
+                    </select>
+                  </div>
+
+                  
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Flexión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="tobillo_flexion_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Extensión </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="tobillo_extension_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Grado </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="tobillo_grado_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Inversion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="inversion_izq" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Eversion </label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="eversion_izq" />
+                  </div>
+
+                </div>
+              </li>
+              <!--Parte 22-->
+
+              <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      OSTEOMUSCULAR
+                    </h1>
+                  </div>
+                 
+                  <div class="uk-width-1-1@s">
+                    <h4>
+                      Dedos Pie
+                    </h4>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Derecho</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dedos_pie_der" />
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Izquierdo</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="dedos_pie_izq" />
+                  </div>
+
+
+                </div>
+              </li>
+              <!--Parte 18-->
+
+              <!--Parte 23-->
+             <li>
+                <div class="uk-cover-container">
+
+                  <div class="uk-width-1-1@s">
+                    <h1>
+                      Hallazgos
+                    </h1>
+                  </div>
+
+                  <div class="uk-width-1-1@s">
+                    <label class="uk-form-label" for="form-stacked-text">Hallazgos anormales</label>
+                    <input class="uk-input" type="text" [(ngModel)]="examen.talla" disabled formControlName="anormales" />
+                  </div>
+
+                  <div class="uk-width-1-1@s uk-flex uk-flex-center">
+                    <button class="uk-button uk-button-primary submitbutton" type="submit">
+                      Guardar Todo
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <!--Parte 22-->
+            </ul>
+          </form>
+
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

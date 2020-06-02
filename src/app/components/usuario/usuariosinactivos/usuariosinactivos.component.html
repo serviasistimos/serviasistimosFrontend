@@ -1,0 +1,165 @@
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large">
+    <h1><span class="ion-speedometer"></span> Usuarios InActivos</h1>
+    <ul class="uk-breadcrumb">
+      <li><a routerLink="">Inicio</a></li>
+      <li><span>Usuarios InActivos</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- End No data -->
+<div class="uk-section-small" *ngIf="clientes.length ==0">
+  <div class="uk-container uk-container-large">
+    <div uk-alert>
+      <h2>No hay datos <i class="fas fa-table"></i></h2>
+    </div>
+  </div>
+</div>
+
+<div class="uk-section-small" *ngIf="clientes.length >0">
+  <div class="uk-container uk-container-large">
+    <div uk-alert>
+      <div class="uk-navbar-left">
+        <div class="uk-search uk-search-navbar">
+          <span uk-search-icon></span>
+          <input [(ngModel)]="term" class="uk-search-input" type="text" placeholder="Buscar...">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="uk-section-small" *ngIf="clientes.length >0">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-small uk-table-divider">
+            <thead>
+              <tr>
+                <th>NO.</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Cedula</th>
+                <th>Fecha Nacimiento</th>
+                <th>Celular</th>
+                <th>Nombre Emergencia</th>
+                <th>Celular Emergencia</th>
+                <th>correo</th>
+                <th>eps</th>
+                <th>Alergias</th>
+                <th>Descripcion Alergias</th>
+                <th>Limitaciones</th>
+                <th>Descripcion Limitaciones</th>
+                <th>Genero</th>
+                <th>Historia clinica</th>
+                <th>Medidas</th>
+                <th>Pago</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cliente of clientes|filter:term" [shAttachMenu]="menu" (contextmenu)="leftClick(cliente.id)">
+                <td>{{cliente.id}}</td>
+                <td>{{cliente.nombres}}</td>
+                <td>{{cliente.apellidos}}</td>
+                <td>{{cliente.numero}}</td>
+                <td>{{cliente.fecha_nacimiento}}</td>
+                <td>{{cliente.celular}}</td>
+                <td>{{cliente.nombre_familiar}}</td>
+                <td>{{cliente.celular_familiar}}</td>
+                <td>{{cliente.correo}}</td>
+                <td>{{cliente.eps}}</td>
+                <td>
+                  <p *ngIf="cliente.alergias == 0">NO</p>
+                  <p *ngIf="cliente.alergias == 1">SI</p>
+                </td>
+                <td>
+                  <p *ngIf="cliente.descripcion_alergias == null">NO TIENE</p>
+                  <button (click)="modalAlergias(cliente.descripcion_alergias)"
+                    *ngIf="cliente.descripcion_alergias != null"
+                    class="uk-button uk-button-default uk-margin-small-right" type="button"
+                    uk-toggle="target: #modal-example">Ver</button>
+                </td>
+                <td>
+                  <p *ngIf="cliente.limitaciones == 0">NO</p>
+                  <p *ngIf="cliente.limitaciones == 1">SI</p>
+                </td>
+                <td>
+                  <p *ngIf="cliente.descripcion_limitaciones == null">NO TIENE</p>
+                  <button (click)="modalLimitaciones(cliente.descripcion_limitaciones)"
+                    *ngIf="cliente.descripcion_limitaciones != null"
+                    class="uk-button uk-button-default uk-margin-small-right" type="button"
+                    uk-toggle="target: #modal-limitaciones">Ver</button>
+
+                </td>
+                <td>
+                  <p *ngIf="cliente.genero == 0">Femenino</p>
+                  <p *ngIf="cliente.genero == 1">Masculino</p>
+                </td>
+                <td>
+                  <button class="uk-button uk-button-primary"
+                    routerLink="/historia/agregar/{{cliente.id}}">Historia</button>
+                </td>
+                <td>
+                  <button class="uk-button uk-button-secondary"
+                    routerLink="/medidas/agregar/{{cliente.id}}">Medidas</button>
+                </td>
+                <td>
+                  <button class="uk-button uk-button-secondary" (click)="CambiarEstadoPago(cliente.id)">Pago</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Clic derecho -->
+<sh-context-menu #menu>
+  <ng-template shContextMenuItem let-data>
+    <div routerLink="/usuario/editar/{{idCliente}}">
+      <span uk-icon="icon: pencil"></span>
+      Editar Usuario
+    </div>
+  </ng-template>
+  <ng-template shContextMenuItem let-data>
+    <div routerLink="/usuario/ver/{{idCliente}}">
+      <span uk-icon="icon: user"></span>
+      Ver Usuario
+    </div>
+  </ng-template>
+</sh-context-menu>
+<!-- End derecho -->
+
+
+<!--Modal Alergias-->
+<div id="modal-example" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <h2 class="uk-modal-title"> Descripción Alergias</h2>
+    <p>{{alergias}}</p>
+    <p class="uk-text-right">
+      <button class="uk-button uk-button-default uk-modal-close" type="button">Cerrar</button>
+    </p>
+  </div>
+</div>
+<!--END Modal Alergias-->
+
+<!--Modal Limitaciones-->
+<div id="modal-limitaciones" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <h2 class="uk-modal-title"> Descripción limitaciones</h2>
+    <p>{{limitaciones}}</p>
+    <p class="uk-text-right">
+      <button class="uk-button uk-button-default uk-modal-close" type="button">Cerrar</button>
+    </p>
+  </div>
+</div>
+<!--END Modal Limitaciones-->

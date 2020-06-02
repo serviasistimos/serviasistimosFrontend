@@ -1,0 +1,145 @@
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large">
+    <h1><span class="ion-speedometer"></span> Agregar Usuario</h1>
+    <ul class="uk-breadcrumb">
+      <li><a routerLink="">Inicio</a></li>
+      <li><a routerLink="/usuario">Usuarios</a></li>
+      <li><span>Agregar Usuario</span></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+
+        <form class="uk-grid-small" uk-grid [formGroup]="data" (ngSubmit)="agregar()">
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Nombres</label>
+            <input class="uk-input" type="text" formControlName="nombres" />
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Apellidos</label>
+            <input class="uk-input" type="text" formControlName="apellidos" />
+          </div>
+          
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text"> Tipo documento</label>
+            <input class="uk-input" type="text" formControlName="tipo_documento" />
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Cedula</label>
+            <input class="uk-input" type="number" formControlName="telefono" />
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Fecha Nacimiento</label>
+            <input class="uk-input" type="date" formControlName="fecha_nacimiento" />
+          </div>
+
+
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Celular</label>
+            <input class="uk-input" type="number" formControlName="celular" />
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Correo</label>
+            <input class="uk-input" type="email" formControlName="correo" />
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">EPS</label>
+            <select class="uk-select" formControlName="eps">
+              <option *ngFor="let ep of eps"   value="{{ep.id}}">{{ep.descripcion}}</option>
+            </select>
+          </div>
+
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Limitaciones</label>
+            <select class="uk-select" formControlName="limitaciones">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s" *ngIf="data.value.limitaciones == 1">
+            <label class="uk-form-label" for="form-stacked-text">Descripcion Limitaciones</label>
+            <input class="uk-input" type="text" formControlName="descripcion_limitaciones" />
+          </div>
+         
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Alergias</label>
+            <select class="uk-select" formControlName="alergias">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s" *ngIf="data.value.alergias == 1">
+            <label class="uk-form-label" for="form-stacked-text">Descripcion Alergias</label>
+            <input class="uk-input" type="text" formControlName="descripcion_alergias" />
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Genero</label>
+            <select class="uk-select" formControlName="genero">
+              <option *ngFor="let gen of genero"   value="{{gen.id}}">{{gen.descripcion}}</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+              <label class="uk-form-label" for="form-stacked-text">Fecha Entrada</label>
+              <input class="uk-input" type="date" formControlName="fecha_entrada" />
+            </div>
+
+            <div class="uk-width-1-2@s">
+                <label class="uk-form-label" for="form-stacked-text">Feccha Fin</label>
+                <input class="uk-input" type="date" formControlName="fecha_fin" />
+              </div>
+
+              <div class="uk-width-1-1@s">
+                <h1 class="text-center">Pago</h1>
+              </div>
+              <div class="uk-width-1-1@s">
+                <label class="uk-form-label" for="form-stacked-text">Pago</label>
+                <select class="uk-select" formControlName="pago">
+                  <option value="1">SI</option>
+                  <option value="0">NO</option>
+                </select>
+              </div>
+
+          <div class="uk-width-1-1@s">
+            <h1 class="text-center">Datos de emergencia</h1>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Nombre emergencia</label>
+            <input class="uk-input" type="text" formControlName="nombre_emergencia" />
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Numero emergencia</label>
+            <input class="uk-input" type="number" formControlName="celular_emergencia" />
+          </div>
+
+
+
+          <div class="uk-width-1-1@s uk-flex uk-flex-center">
+            <button class="uk-button uk-button-primary submitbutton" type="submit" [disabled]="!data.valid">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large">
+    <h1><span class="ion-speedometer"></span> Reporte Usuario</h1>
+    <ul class="uk-breadcrumb">
+      <li><a routerLink="">Inicio</a></li>
+      <li><span>Reporte Usuario</span></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+          <div>
+            <button class="uk-button uk-button-primary uk-button-large">Reporte General</button>
+          </div>
+          <div>
+            <div class="uk-search uk-search-default">
+              <span class="uk-search-icon-flip" uk-search-icon></span>
+              <input class="uk-input uk-form-width-medium uk-form-large" type="text" placeholder="Buscar PM..."
+                [(ngModel)]="term">
+              <div uk-dropdown>
+                <ul class="uk-nav uk-dropdown-nav">
+                  <li *ngFor="let item of items | filter:term" class="uk-active"> {{item}}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <input class="uk-input uk-form-width-medium boton" type="text" placeholder="PM">
+              <button class="uk-button uk-button-primary ">Generar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

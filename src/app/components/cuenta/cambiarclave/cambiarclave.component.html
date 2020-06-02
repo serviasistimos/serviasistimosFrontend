@@ -1,0 +1,47 @@
+<div class="uk-section-small uk-section-default header  ">
+    <div class="uk-container uk-container-large">
+      <h1>Cambiar Contraseña</h1>
+      <ul class="uk-breadcrumb">
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/administracion">Administración</a></li>
+        <li><a routerLink="/cuenta">Cuenta</a></li>
+        <li>Cambiar Contraseña</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="uk-section-small">
+    <div class="uk-container uk-container-large">
+      <div>
+        <div class="uk-card uk-card-default uk-card-body">
+          <form class="uk-grid-small" uk-grid [formGroup]="formulario" (ngSubmit)="editar()">
+            <div class="uk-width-1-1@s">
+              <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
+              <input class="uk-input" type="password" required minlength="8" maxlength="15" [pattern]="'^[a-zA-Z0-9 \'\-]+$'" formControlName="clave">
+            </div>
+            <div *ngIf="formulario.get('clave').errors && formulario.get('clave').dirty">
+              <p *ngIf="formulario.get('clave').hasError('required')">Campo Obligatorio</p>
+              <p *ngIf="formulario.get('clave').hasError('minlength')">Minimo 8 caracteres</p>
+              <p *ngIf="formulario.get('clave').hasError('maxlength')">Maximo  10 caracteres</p>
+            </div>
+  
+            <div class="uk-width-1-1@s">
+                <label class="uk-form-label" for="form-stacked-text">Confirmar Contraseña</label>
+                <input class="uk-input" type="password" required minlength="8" maxlength="15" [pattern]="'^[a-zA-Z0-9 \'\-]+$'" formControlName="confirmar_contraseña">
+              </div>
+              <div *ngIf="formulario.get('confirmar_contraseña').errors && formulario.get('confirmar_contraseña').dirty">
+                <p *ngIf="formulario.get('confirmar_contraseña').hasError('required')">Campo Obligatorio</p>
+                <p *ngIf="formulario.get('confirmar_contraseña').hasError('minlength')">Minimo 8 caracteres</p>
+                <p *ngIf="formulario.get('confirmar_contraseña').hasError('maxlength')">Maximo  10 caracteres</p>
+              </div>
+
+            <div class="uk-width-1-1@s uk-text-center">
+              <button type="button" class="uk-button uk-button-default" routerLink="/cuenta">Cancelar</button>
+              <button type="submit" class="uk-button uk-button-primary" [disabled]="!formulario.valid">Actualizar</button>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

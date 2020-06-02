@@ -1,0 +1,520 @@
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large">
+    <h1><span class="ion-speedometer"></span> Agregar Historia Clinica</h1>
+    <ul class="uk-breadcrumb">
+      <li><a routerLink="">Inicio</a></li>
+      <li><a routerLink="/usuario">Usuarios</a></li>
+      <li><span>Agregar Historia Clinica</span></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+
+        <form class="uk-grid-small" uk-grid [formGroup]="data" (ngSubmit)="agregar()">
+          
+          <div class="uk-width-1-1@s">
+            <h1 style="text-align: center">Motivo Consulta</h1>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Motivo Consulta</label>
+            <textarea class="uk-input" type="text" formControlName="razon"></textarea>
+          </div>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Sincope</label>
+            <select class="uk-select" formControlName="sincope">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Cefalea</label>
+            <select class="uk-select" formControlName="cefalea">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Dolor toracico</label>
+            <select class="uk-select" formControlName="dolor_toracico">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Palpitaciones</label>
+            <select class="uk-select" formControlName="palpitaciones">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Dolor articular</label>
+            <select class="uk-select" formControlName="dolor_articular">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Enfermedad Actual</label>
+            <textarea class="uk-textarea" formControlName="enfermedad_actual"></textarea>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <h1 style="text-align: center">Antecedentes</h1>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Patologicos</label>
+            <select class="uk-select" formControlName="patologicos">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+              <option value="2">OTROS</option>
+            </select>
+          </div>
+          <div class="uk-width-1-1@s" *ngIf="data.value.patologicos == 2">
+            <label class="uk-form-label" for="form-stacked-text">Otros</label>
+            <input class="uk-input" type="text" formControlName="otros" />
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Obesidad</label>
+            <select class="uk-select" formControlName="Obesidad">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Displidemia</label>
+            <select class="uk-select" formControlName="Dislipidemia">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Hipertension arterial</label>
+            <select class="uk-select" formControlName="hipertencion_arterial">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Diabetes mellitus</label>
+            <select class="uk-select" formControlName="diabetes_mellitus">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Sincope</label>
+            <select class="uk-select" formControlName="Sincope_familiar">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Infarto agudo miocardio</label>
+            <select class="uk-select" formControlName="Infarto_agudo_del_miocardio">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">insuficiencia cardiaca</label>
+            <select class="uk-select" formControlName="insuficiencia_cardiaca">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Paro cardiaco</label>
+            <select class="uk-select" formControlName="paro_cardiaco">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Enfermedad Renal</label>
+            <select class="uk-select" formControlName="enfermedad_renal">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <!--Grados de enfermedad Renal-->
+          <div class="uk-width-1-1@s" *ngIf="data.value.enfermedad_renal == 1">
+            <label class="uk-form-label" for="form-stacked-text">Estadio</label>
+            <select class="uk-select" formControlName="estadio">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3a</option>
+              <option value="4">3b</option>
+              <option value="5">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <!--fin Grados de enfermedad Renal-->
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">hemodialisis</label>
+            <select class="uk-select" formControlName="hemodialisis">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Enfermedad vascular periferica</label>
+            <select class="uk-select" formControlName="Enfermedad_vascular_periferica">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Asma</label>
+            <select class="uk-select" formControlName="Asma">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">EPOC</label>
+            <select class="uk-select" formControlName="EPOC">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Artritis</label>
+            <select class="uk-select" formControlName="Artritis">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Artritis Reumatoidea</label>
+            <select class="uk-select" formControlName="Artritis_reumatoidea">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">LES</label>
+            <select class="uk-select" formControlName="LES">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Anemia</label>
+            <select class="uk-select" formControlName="Anemia">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">hepatitis</label>
+            <select class="uk-select" formControlName="hepatitis">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">VIH</label>
+            <select class="uk-select" formControlName="VIH">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Neoplasias</label>
+            <select class="uk-select" formControlName="Neoplasias">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Hipotiroidismo</label>
+            <select class="uk-select" formControlName="Hipotiroidismo">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+
+          <!--titulo general-->
+          <div class="uk-width-1-1@s">
+            <h1 style="text-align: center">Descripcion antecedentes patologicos</h1>
+          </div>
+          <!--titulo general-->
+
+          <!--subtitulo Quirúrgicos-->
+          <div class="uk-width-1-1@s">
+            <h2 style="text-align: center">Quirúrgicos</h2>
+          </div>
+          <!--subtitulo Quirúrgicos-->
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Corazón</label>
+            <select class="uk-select" formControlName="corazon">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Hombro</label>
+            <select class="uk-select" formControlName="hombro">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Rodilla</label>
+            <select class="uk-select" formControlName="rodilla">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Descripcion antecedentes quirurgicos</label>
+            <textarea class="uk-input" type="text" formControlName="quirurgicos"></textarea>
+          </div>
+
+          <!--subtitulo Alergicos-->
+          <div class="uk-width-1-1@s">
+            <h2 style="text-align: center">Alergicos</h2>
+          </div>
+          <!--subtitulo Alergicos-->
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Alergicos</label>
+            <select class="uk-select" formControlName="alergicos">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Descripcion Alergicos</label>
+            <textarea class="uk-input" type="text" formControlName="descripcion_alergicos"></textarea>
+          </div>
+
+          <!--subtitulo Toxicologicos-->
+          <div class="uk-width-1-1@s">
+            <h2 style="text-align: center">Toxicologicos</h2>
+          </div>
+          <!--subtitulo Toxicologicos-->
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Alcohol</label>
+            <select class="uk-select" formControlName="alcohol">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Tabaquismo</label>
+            <select class="uk-select" formControlName="tabaquismo">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Sustancias psicoactivas</label>
+            <select class="uk-select" formControlName="sustancias_psicoactivas">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Descripcion antecedentes toxicologicos</label>
+            <textarea class="uk-input" type="text" formControlName="toxilogicos"></textarea>
+          </div>
+
+          <!--subtitulo Traumaticos-->
+          <div class="uk-width-1-1@s">
+            <h2 style="text-align: center">Traumaticos</h2>
+          </div>
+          <!--subtitulo Traumaticos-->
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Fracturas </label>
+            <select class="uk-select" formControlName="fracturas">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Transfusionales </label>
+            <select class="uk-select" formControlName="transfusionales">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Descripcion Traumaticos</label>
+            <textarea class="uk-input" type="text" formControlName="traumaticos"></textarea>
+          </div>
+
+          <!--subtitulo Hospitalizaciones-->
+          <div class="uk-width-1-1@s">
+            <h2 style="text-align: center">Hospitalizaciones</h2>
+          </div>
+          <!--subtitulo Hospitalizaciones -->
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Hospitalizaciones</label>
+            <select class="uk-select" formControlName="hospitalizaciones">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Descripción Hospitalizaciones</label>
+            <textarea class="uk-input" type="text" formControlName="descripcion_hospitalizaciones"></textarea>
+          </div>
+
+
+          <!--subtitulo Ginecologicos-->
+          <div class="uk-width-1-1@s" *ngIf="sexo.id == 1">
+            <h2 style="text-align: center">Ginecologicos</h2>
+          </div>
+          <!--subtitulo Ginecologicos-->
+
+
+          <div class="uk-width-1-2@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text">Menarquia </label>
+            <input class="uk-input" type="text" formControlName="Menarquia" />
+          </div>
+
+          <div class="uk-width-1-2@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text">FUR </label>
+            <input class="uk-input" type="date" formControlName="FUR" />
+          </div>
+
+          <div class="uk-width-1-2@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text">Ciclos</label>
+            <select class="uk-select" formControlName="Ciclos">
+              <option value="1">Regulares</option>
+              <option value="0">Irregulares</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text">Estado de Embarazo</label>
+            <select class="uk-select" formControlName="embarazo">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-4@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text">G__</label>
+            <input class="uk-input" type="number" name="quantity" maxlength="3" min="1" max="3" formControlName="mu_g" />
+          </div>
+          <div class="uk-width-1-4@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text"> P__ </label>
+            <input class="uk-input" type="number" name="quantity" maxlength="3" min="1" max="3" formControlName="mu_p" />
+          </div>
+          <div class="uk-width-1-4@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text">C __</label>
+            <input class="uk-input" type="number" name="quantity" maxlength="3" min="1" max="3" formControlName="mu_c" />
+          </div>
+          <div class="uk-width-1-4@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text">A __</label>
+            <input class="uk-input" type="number" name="quantity" maxlength="3" min="1" max="3" formControlName="mu_a" />
+          </div>
+          <div class="uk-width-1-4@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text">E__</label>
+            <input class="uk-input" type="number" name="quantity" maxlength="3" min="1" max="3" formControlName="mu_e" />
+          </div>
+          <div class="uk-width-1-4@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text">V__ </label>
+            <input class="uk-input" type="number" name="quantity" maxlength="3" min="1" max="3" formControlName="mu_v" />
+          </div>
+          <div class="uk-width-1-4@s" *ngIf="sexo.id == 1">
+            <label class="uk-form-label" for="form-stacked-text"> M__</label>
+            <input class="uk-input" type="number" name="quantity" maxlength="3" min="1" max="3" formControlName="mu_m" />
+          </div>
+
+          <!--subtitulo Familiares-->
+          <div class="uk-width-1-1@s">
+            <h2 style="text-align: center">Familiares</h2>
+          </div>
+          <!--subtitulo Familiares-->
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Muerte Subita</label>
+            <select class="uk-select" formControlName="muerte_subita">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">IAM antes de los 50 años</label>
+            <select class="uk-select" formControlName="IAM">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Diabetes mellitus</label>
+            <select class="uk-select" formControlName="diabetes_mellitus_familia">
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Descripcion antecednetes familiares</label>
+            <textarea class="uk-input" type="text" formControlName="descripcion_antecednetes_familiares"></textarea>
+          </div>
+
+          <div class="uk-width-1-1@s uk-flex uk-flex-center">
+            <button class="uk-button uk-button-primary submitbutton" type="submit" [disabled]="!data.valid">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

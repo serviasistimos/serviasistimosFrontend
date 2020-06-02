@@ -1,0 +1,45 @@
+
+<div class="uk-section-small uk-section-default header  ">
+    <div class="uk-container uk-container-large">
+      <h1>Editar Cuenta</h1>
+      <ul class="uk-breadcrumb">
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/administracion">Administración</a></li>
+        <li><a routerLink="/cuenta">cuentas</a></li>
+        <li>Editar cuenta</li>
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <div class="uk-section-small">
+    <div class="uk-container uk-container-large">
+      <div>
+        <div class="uk-card uk-card-default uk-card-body">
+          <form class="uk-grid-small" uk-grid [formGroup]="formulario" (ngSubmit)="editar()">
+
+            <div class="uk-width-1-1@s">
+              <label class="uk-form-label" for="form-stacked-text">email</label>
+              <input class="uk-input" type="text" formControlName="email" [(ngModel)]="cuenta.email" />
+            </div>
+
+            <div class="uk-width-1-1@s">
+              <label class="uk-form-label" for="form-stacked-text">Rol</label>
+              <select class="uk-width uk-select uk-form-width-large" formControlName="rol" [(ngModel)]="cuenta.rol.id">
+                <option *ngFor="let rol of roles" value="{{rol.id}}">{{rol.descripcion}}</option>
+              </select>
+            </div>
+
+
+            <div class="uk-width-1-1@s uk-text-center">
+              <button type="button" class="uk-button uk-button-default" routerLink="/cuenta">Cancelar</button>
+              <button type="submit" class="uk-button uk-button-primary" style="margin-left: 13px " [disabled]="!formulario.valid">Actualizar</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>

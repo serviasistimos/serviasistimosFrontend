@@ -1,0 +1,59 @@
+<div class="uk-section-small uk-section-default header  ">
+  <div class="uk-container uk-container-large">
+      <h1>Analisís</h1>
+      <ul class="uk-breadcrumb">
+          <li><a routerLink="/">Inicio</a></li>
+          <li><a>Ver Analisís</a></li>
+      </ul>
+  </div>
+</div>
+
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+
+        <form class="uk-grid-small" uk-grid [formGroup]="data" (ngSubmit)="volver()">
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">Descripción </label>
+            <textarea class="uk-textarea" disabled [(ngModel)]="analisis.descripcion_analisis" formControlName="descripcion_analisis"></textarea>
+          </div>
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">clasificacion_AHA </label>
+            <select class="uk-select" disabled [(ngModel)]="analisis.clasificacion_AHA" formControlName="clasificacion_AHA">
+              <option value="0">A1</option>
+              <option value="1">A2</option>
+              <option value="2">A3</option>
+              <option value="3">B</option>
+              <option value="4">C</option>
+              <option value="5">D</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">clasificacion_AACVPR </label>
+            <select class="uk-select" disabled [(ngModel)]="analisis.clasificacion_AACVPR" formControlName="clasificacion_AACVPR">
+              <option value="0">Bajo</option>
+              <option value="1">Medio</option>
+              <option value="2">Alto</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s" >
+            <label class="uk-form-label" for="form-stacked-text">Objetivos </label>
+            <textarea class="uk-textarea" disabled [(ngModel)]="analisis.objetivos" formControlName="objetivos"></textarea>
+          </div>
+         
+          <div class="uk-width-1-1@s uk-flex uk-flex-center">
+            <button class="uk-button uk-button-primary submitbutton" type="submit" [disabled]="!data.valid">
+              volver
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

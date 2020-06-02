@@ -1,0 +1,34 @@
+<div id="sidebar" class="tm-sidebar-left uk-background-default">
+
+    <div class="user">
+        <img id="avatar" width="100" class="uk-border-circle" src="../../../assets/images/image3.jpeg" />
+        <div class="uk-margin-top"></div>
+        <!-- <div id="name" class="uk-text-truncate">{{data.nombre}}</div>
+        <div id="email" class="uk-text-truncate">{{data.email}}</div>-->
+    </div>
+
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-nav-header">
+            <p style="font-size: 10px;text-align: center">
+                {{data.data.email}}
+            </p>
+            <p style="font-size: 10px;text-align: center">
+                {{data.data.rol.descripcion}}
+            </p>
+        </li>
+
+        <li class="uk-nav-item">
+            <a routerLink="/usuario">
+                Usuarios Activos
+            </a>
+        </li>
+        <!-- <li class="uk-nav-item">
+            <a routerLink="/usuario/inactivos">
+                Usuarios Inactivos
+            </a>
+        </li> -->
+        <li>
+            <a routerLink="/administracion"><i class="fas fa-cogs"></i><b>ADMIN</b></a>
+        </li>
+    </ul>
+</div>

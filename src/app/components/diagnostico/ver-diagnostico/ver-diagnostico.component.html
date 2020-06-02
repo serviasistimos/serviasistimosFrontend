@@ -1,0 +1,89 @@
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large">
+    <h1><span class="ion-speedometer"></span> Ver Diagnostico</h1>
+    <ul class="uk-breadcrumb">
+      <li><a routerLink="">Inicio</a></li>
+      <li><a routerLink="/usuario">Usuarios</a></li>
+      <li><span>Ver Diagnostico</span></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="uk-section-small" *ngIf="clientes == 0">
+  <div class="uk-container uk-container-large">
+    <div uk-alert>
+      <h2>No hay datos <i class="fas fa-table"></i></h2>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="diagnostico != 0">
+  <div class="uk-section-small">
+    <div class="uk-container uk-container-large">
+      <div>
+        <div class="uk-card uk-card-default uk-card-body">
+          <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+              </div>
+            </div>
+          </div>
+          <div class="uk-card-body">
+          <p *ngIf="diagnostico.Hipertrofia == 0">Hipertrofia:NO</p>
+                  <p *ngIf="diagnostico.Hipertrofia == 1">Hipertrofia:SI</p>
+                  <p *ngIf="diagnostico.bajar_peso == 0">bajar peso:NO</p>
+                  <p *ngIf="diagnostico.bajar_peso == 1">bajar peso:SI</p>
+                  <p *ngIf="diagnostico.Ganancia_fuerza == 0">Ganancia fuerza:NO</p>
+                  <p *ngIf="diagnostico.Ganancia_fuerza == 1">Ganancia fuerza: SI</p>
+                  <p *ngIf="diagnostico.Potencia == 0"> Potencia NO</p>
+                  <p *ngIf="diagnostico.Potencia == 1"> Potencia SI</p>
+                  <p *ngIf="diagnostico.capacidad_aerobica == 0"> capacidad aerobicaNO</p>
+                  <p *ngIf="diagnostico.capacidad_aerobica == 1"> capacidad aerobicaSI</p>
+                  <p *ngIf="diagnostico.sincope == 0"> sincope NO</p>
+                  <p *ngIf="diagnostico.sincope == 1">sincope SI</p>
+                  <p *ngIf="diagnostico.cefalea == 0"> cefaleaNO</p>
+                  <p *ngIf="diagnostico.cefalea == 1"> cefalea SI</p>
+                  <p *ngIf="diagnostico.dolor_articular == 0"> dolor articular NO</p>
+                  <p *ngIf="diagnostico.dolor_articular == 1">dolor articular SI</p>
+                  <p *ngIf="diagnostico.dolor_toracico == 0"> dolor toracico NO</p>
+                  <p *ngIf="diagnostico.dolor_toracico == 1">dolor toracico SI</p>
+                  <p *ngIf="diagnostico.palpitaciones == 0">palpitaciones NO</p>
+                  <p *ngIf="diagnostico.palpitaciones == 1"> palpitaciones SI</p>
+                  <p>enfermedad: actual{{diagnostico.enfermedad_actual}}</p>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="uk-section-small" >
+  <div class="uk-container uk-container-large">
+    <div class="uk-grid-small uk-child-width-1-4@s uk-flex-center uk-text-center" uk-grid>
+      <div *ngFor="let lista of diagnostico.historias | paginate: { itemsPerPage: 8, currentPage: p }">
+        <div class="uk-card uk-card-default uk-card-body">
+          <img src="../../../../assets/images/post_NUEVAS_SOLIC.jpg" alt="">
+          <a class="uk-button uk-button-text">{{lista.fecha_creacion}}</a>
+          <div>
+              <ul class="uk-nav ">
+                  <li>
+                    <button class="uk-button uk-button-danger" uk-tooltip="ver" routerLink="/historia/editar/{{lista.id}}">
+                      <span uk-icon="lock"></span></button>
+                  </li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div uk-margin>
+      <div style="margin-top:10px;" class="uk-width-1-1@s paginator">
+        <pagination-controls class="uk-width-1-1@s" (pageChange)="p = $event" directionLinks="true" autoHide="true" responsive="true"
+          previousLabel="Anterior" nextLabel="Siguiente">
+        </pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

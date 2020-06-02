@@ -1,0 +1,132 @@
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large">
+    <h1><span class="ion-speedometer"></span> Agregar Medida</h1>
+    <ul class="uk-breadcrumb">
+      <li><a routerLink="">Inicio</a></li>
+      <li><a routerLink="/usuario">Usuarios</a></li>
+      <li><span>Agregar Medida</span></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+
+        <form class="uk-grid-small" uk-grid [formGroup]="data" (ngSubmit)="agregar()">
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Talla</label>
+            <input class="uk-input" type="number"  formControlName="altura" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Peso</label>
+            <input class="uk-input" type="number" formControlName="peso" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Porcentaje Graso</label>
+            <input class="uk-input" type="number" formControlName="grasa" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Masa grasa</label>
+            <input class="uk-input" type="number" formControlName="masa_grasa" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">% musculo</label>
+            <input class="uk-input" type="number" formControlName="musculo" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Masa Muscular</label>
+            <input class="uk-input" type="number" formControlName="masa_muscular" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Muñeca Derecha</label>
+            <input class="uk-input" type="number" formControlName="muneca_derecha" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Indice de Complexion Corporal</label>
+            <input class="uk-input" type="number" formControlName="indice_corporal" />
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Complexion Corporal</label>
+            <input class="uk-input" type="number" formControlName="complexion_corporal" />
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Cuello </label>
+            <input class="uk-input" type="number" formControlName="cuello" />
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Pecho </label>
+            <input class="uk-input" type="number" formControlName="pecho" />
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Abdomen Superior </label>
+            <input class="uk-input" type="number" formControlName="abdomen_superior" />
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Abdomen Medio </label>
+            <input class="uk-input" type="number" formControlName="abdomen_medio" />
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Abdomen inferior </label>
+            <input class="uk-input" type="number" formControlName="abdomen_inferior" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Caderas </label>
+            <input class="uk-input" type="number" formControlName="cadera" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Brazo Derecho Relajado</label>
+            <input class="uk-input" type="number" formControlName="Brazo_derecho_relajado" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Brazo Derecho Contraido</label>
+            <input class="uk-input" type="number" formControlName="Brazo_derecho_contraido" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Brazo Izquierdo Relajado</label>
+            <input class="uk-input" type="number" formControlName="Brazo_izquierdo_relajado" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Brazo Izquierdo Contraido</label>
+            <input class="uk-input" type="number" formControlName="Brazo_izuqierdo_contraido" />
+          </div>
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Muslo Derecho</label>
+            <input class="uk-input" type="number" formControlName="Muslo_derecho" />
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Muslo Izquierdo</label>
+            <input class="uk-input" type="number" formControlName="Muslo_izuqierdo" />
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Pantorrilla Derecha</label>
+            <input class="uk-input" type="number" formControlName="pantorrilla_derecha" />
+          </div>
+
+          <div class="uk-width-1-3@s">
+            <label class="uk-form-label" for="form-stacked-text">Pantorrilla Izquierda</label>
+            <input class="uk-input" type="number" formControlName="Pantorrilla_izuqierda" />
+          </div>
+        
+
+          <div class="uk-width-1-1@s uk-flex uk-flex-center">
+            <button class="uk-button uk-button-primary submitbutton" type="submit" [disabled]="!data.valid">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
