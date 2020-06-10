@@ -8,14 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   constructor() { }
-  public data : any = [];
-  ngOnInit()
-  {
-    this.data = JSON.parse(localStorage.getItem("logindata"));
+  public data: any = [];
+  ngOnInit() {
+    this.data = [];
   }
 
-  logout()
-  {
+  logout() {
     localStorage.clear();
     window.location.href = '';
   }

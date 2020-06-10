@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteService } from 'src/app/services/cliente.service';
-import { GeneralService } from 'src/app/services/general.service';
+import { UserService } from 'src/app/services/userService';
 
 @Component({
   selector: 'app-usuarios',
@@ -8,55 +7,24 @@ import { GeneralService } from 'src/app/services/general.service';
   styleUrls: ['./usuario.component.scss']
 })
 export class UsuarioComponent implements OnInit {
-
+  public usuarios: any = [];
   constructor(
-    private clienteService: ClienteService,
-    private generalService: GeneralService,
+    private readonly userService: UserService
   ) { }
-  public clientes: any = [];
-  public alergias: any;
-  public limitaciones: any;
-  public idCliente:any;
-  n:any;
-  y:any;
-  m:any;
-  d:any;
-  fecha:any;
-  public data : any = [];
+
+
   ngOnInit() {
-    this.data = JSON.parse(localStorage.getItem("logindata"));
-    this.n =  new Date();
-    //Año
-    this.y = this.n.getFullYear();
-    //Mes
-    this.m = this.n.getMonth() + 1;
-    //Día
-    this.d = this.n.getDate();
-    this.fecha = this.d + "/" + this.m + "/" + this.y;
-    this.listar();
-  }
-  listar() {
-    this.clienteService.listar().subscribe(
-      response => {
-        this.clientes = response['data'];
-        console.log(this.clientes);
-      },
-      error => {
-        console.log(<any>error);
-      }
-    )
+    this.getUsers();
   }
 
-  modalAlergias(msg) {
-    this.alergias = msg;
+  getUsers() {
+    this.userService.getUsers().subscribe(
+      res => {
+        console.log(res);
+        this.usuarios = res;
+      }, err => {
+        console.log(err);
+      });
   }
-  modalLimitaciones(msg) {
-    this.limitaciones = msg;
-  }
-  leftClick(id) {
-    this.idCliente = id;
-  }
-
-
 
 }

@@ -1,34 +1,43 @@
 <div id="sidebar" class="tm-sidebar-left uk-background-default">
 
     <div class="user">
-        <img id="avatar" width="100" class="uk-border-circle" src="../../../assets/images/image3.jpeg" />
+        <img id="avatar" width="300" height="300" class="uk-border-circle" src="../../../../assets/images/logo.png" />
         <div class="uk-margin-top"></div>
-        <!-- <div id="name" class="uk-text-truncate">{{data.nombre}}</div>
-        <div id="email" class="uk-text-truncate">{{data.email}}</div>-->
+        <h2><strong>ServiAsistimos</strong></h2>
+         <div id="name" class="uk-text-truncate">Ronald</div>
+        <div id="email" class="uk-text-truncate">Rodriguez</div>
     </div>
 
     <ul class="uk-nav uk-nav-default">
-        <li class="uk-nav-header">
-            <p style="font-size: 10px;text-align: center">
-                {{data.data.email}}
-            </p>
-            <p style="font-size: 10px;text-align: center">
-                {{data.data.rol.descripcion}}
-            </p>
+        <li>
+            <a routerLink="/usuario" routerLinkActive="active">
+                <i class="fas fa-users"></i>
+                <strong>Usuarios</strong>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
+        </li>
+        <li>
+            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
+        </li>
+        <li>
+            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
+        </li>
+        <li>
+            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
+        </li>
+        <li>
+            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
+        </li>
+        <li>
+            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
+        </li>
+        <li>
+            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
         </li>
 
-        <li class="uk-nav-item">
-            <a routerLink="/usuario">
-                Usuarios Activos
-            </a>
-        </li>
-        <!-- <li class="uk-nav-item">
-            <a routerLink="/usuario/inactivos">
-                Usuarios Inactivos
-            </a>
-        </li> -->
-        <li>
-            <a routerLink="/administracion"><i class="fas fa-cogs"></i><b>ADMIN</b></a>
-        </li>
     </ul>
+
+
 </div>

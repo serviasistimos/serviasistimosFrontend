@@ -8,19 +8,18 @@ import { GeneralService } from './general.service';
 export class LoginService {
 
   constructor(
-    private http : HttpClient
+    private http: HttpClient
   ) { }
 
-  url : any = GeneralService.WS_URL + "login";
+  url: any;
 
 
-  login(data): any 
-  {
+  login(data): any {
     const headers = new HttpHeaders({
-      'Content-Type' : 'application/json'
+      'Content-Type': 'application/json'
     });
-    let params = data;
-  	return this.http.post(this.url + '/login', params, {headers : headers}); 
+    const params = data;
+    return this.http.post(this.url + '/login', params, { headers: headers });
   }
 
 }
