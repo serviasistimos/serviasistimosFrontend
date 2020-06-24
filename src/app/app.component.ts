@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgxPermissionsService } from 'ngx-permissions';
-import { HttpClient } from '@angular/common/http';
+import { EncryptService } from './services/encrypt.service';
+import { User } from './models/user';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,13 +11,21 @@ export class AppComponent {
 
   title = 'ServiAsistimos';
   public loginstatus = localStorage.getItem('loginstatus');
+  public user: User;
+  public validation: boolean;
 
 
   constructor(
     private permissionsService: NgxPermissionsService,
-    private http: HttpClient
+    private readonly encryptService: EncryptService,
   ) {
 
+    this.dataUser();
+  }
+
+  public dataUser() {
+    this.user = new User();
+    this.user = this.encryptService.getValue();
   }
 
 

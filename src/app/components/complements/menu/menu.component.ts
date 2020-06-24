@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { EncryptService } from 'src/app/services/encrypt.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
-  public data: any = [];
+  public user: User;
+  constructor(private readonly encryptService: EncryptService) {
+    this.user = new User();
+  }
+
   ngOnInit() {
-    this.data = [];
+    this.user = this.encryptService.getValue();
   }
 
 }

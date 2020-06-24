@@ -1,43 +1,45 @@
 <div id="sidebar" class="tm-sidebar-left uk-background-default">
-
     <div class="user">
-        <img id="avatar" width="300" height="300" class="uk-border-circle" src="../../../../assets/images/logo.png" />
+        <img id="avatar" width="200" height="200" class="uk-border-circle" src="../../../../assets/images/logo.png" />
         <div class="uk-margin-top"></div>
-        <h2><strong>ServiAsistimos</strong></h2>
-         <div id="name" class="uk-text-truncate">Ronald</div>
-        <div id="email" class="uk-text-truncate">Rodriguez</div>
+        <h3>
+            <strong>
+                {{user.user.name}}{{user.user.lastName}}
+            </strong>
+        </h3>
+        <div id="email" class="uk-text-truncate">
+            <h6>{{user.user.email}}</h6>
+        </div>
+        <div id="email" class="uk-text-truncate">
+            <h6>{{user.user.role}}</h6>
+        </div>
     </div>
 
     <ul class="uk-nav uk-nav-default">
-        <li>
+        <hr class="uk-divider-icon">
+        <li style="text-align: center;">
             <a routerLink="/usuario" routerLinkActive="active">
                 <i class="fas fa-users"></i>
                 <strong>Usuarios</strong>
             </a>
         </li>
-        <li>
-            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
+        <hr class="uk-divider-icon">
+        <li style="text-align: center;">
+            <a routerLink="/costumer"><i class="fas fa-cogs"></i><b>Clientes</b></a>
         </li>
-        <li>
-            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
-        </li>
-        <li>
-            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
-        </li>
-        <li>
-            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
-        </li>
-        <li>
-            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
-        </li>
-        <li>
-            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
-        </li>
-        <li>
-            <a routerLink="/usuario" ><i class="fas fa-cogs"></i><b>Usuarios</b></a>
+        <hr class="uk-divider-icon">
+        <li style="text-align: center;">
+            <a routerLink="/insurance"><i class="fas fa-car-crash"></i><b>Seguros</b></a>
         </li>
 
+        <hr class="uk-divider-icon">
+        <li style="text-align: center;">
+            <a routerLink="/insurance/customer"><i class="fas fa-car-crash"></i><b>Seguros y Clientes</b></a>
+        </li>
+
+        <hr class="uk-divider-icon">
+        <li style="text-align: center;">
+            <a routerLink="/service"><i class="fas fa-car-crash"></i><b>Servicios</b></a>
+        </li>
     </ul>
-
-
 </div>

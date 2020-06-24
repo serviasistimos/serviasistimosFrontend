@@ -1,8 +1,8 @@
-<html *ngIf="loginstatus == 'false' || loginstatus == null">
+<html *ngIf="user.ok === false">
 <app-login></app-login>
 </html>
 
-<html *ngIf="loginstatus == 'true'" >
+<html *ngIf="user.ok === true" >
 <head>
     <title>ServiAsistimos</title>
     <meta charset="utf-8">

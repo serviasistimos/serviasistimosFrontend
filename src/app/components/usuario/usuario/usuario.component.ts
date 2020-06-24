@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/userService';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -7,10 +8,11 @@ import { UserService } from 'src/app/services/userService';
   styleUrls: ['./usuario.component.scss']
 })
 export class UsuarioComponent implements OnInit {
-  public usuarios: any = [];
-  constructor(
-    private readonly userService: UserService
-  ) { }
+  public users: any = [];
+  public idUser: number;
+  constructor(private readonly userService: UserService, private readonly generalService: GeneralService) {
+    this.idUser = 0;
+   }
 
 
   ngOnInit() {
@@ -20,11 +22,14 @@ export class UsuarioComponent implements OnInit {
   getUsers() {
     this.userService.getUsers().subscribe(
       res => {
-        console.log(res);
-        this.usuarios = res;
+        this.users = res.users;
       }, err => {
-        console.log(err);
+        this.generalService.abrirMensaje('Ocurrio un Error', 'error');
       });
+  }
+
+  leftClick(id) {
+    this.idUser = id;
   }
 
 }

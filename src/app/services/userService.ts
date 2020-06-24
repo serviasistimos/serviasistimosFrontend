@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GeneralService } from './general.service';
 import { BaseService } from './baseService';
+import { EncryptService } from './encrypt.service';
 
 @Injectable({
     providedIn: 'root'
@@ -9,7 +10,7 @@ import { BaseService } from './baseService';
 export class UserService extends BaseService {
     public url: string;
     constructor(
-        public readonly http: HttpClient
+        public readonly http: HttpClient,
     ) {
         super(http);
         this.url = 'url';
@@ -17,7 +18,7 @@ export class UserService extends BaseService {
 
 
     getUsers(): any {
-        return this.get('user/getUser');
+        return this.get('user/getUsers');
     }
 
     getUsersById(id): any {

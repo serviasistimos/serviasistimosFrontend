@@ -61,6 +61,7 @@ export class AgregarUsuarioComponent implements OnInit {
     this.userService.postUser(data).subscribe(
       res => {
         this.generalService.abrirMensaje('Agregado Correctamente', 'success');
+        this.router.navigate(['/usuario']);
       }, err => {
         this.generalService.abrirMensaje('Ocurrio un Error', 'error');
       });

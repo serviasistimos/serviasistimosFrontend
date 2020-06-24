@@ -24,6 +24,32 @@ import { FooterComponent } from './components/complements/footer/footer.componen
 import { NotfoundComponent } from './components/complements/notfound/notfound.component';
 import { LoginComponent } from './components/login/login.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { EditarUsuarioComponent } from './components/usuario/editar-usuario/editar-usuario.component';
+import { CanActivateViaAuthGuard } from './services/canActivateService';
+import { CostumerComponent } from './components/costumer/costumer/costumer.component';
+import { AddCostumerComponent } from './components/costumer/add-costumer/add-costumer.component';
+import { UpdateCostumerComponent } from './components/costumer/update-costumer/update-costumer.component';
+import { DeleteCostumerComponent } from './components/costumer/delete-costumer/delete-costumer.component';
+import { InsuranceComponent } from './components/insurance/insurance/insurance.component';
+import { AddInsuranceComponent } from './components/insurance/add-insurance/add-insurance.component';
+import { UpdateInsuranceComponent } from './components/insurance/update-insurance/update-insurance.component';
+import { DeleteInsuranceComponent } from './components/insurance/delete-insurance/delete-insurance.component';
+import { InsurancecustomerComponent } from './components/insurance-customer/insurancecustomer/insurancecustomer.component';
+import { AddinsurancecustomerComponent } from './components/insurance-customer/addinsurancecustomer/addinsurancecustomer.component';
+import {
+  UpdateinsurancecustomerComponent
+} from './components/insurance-customer/updateinsurancecustomer/updateinsurancecustomer.component';
+import {
+  DeleteinsurancecustomerComponent
+} from './components/insurance-customer/deleteinsurancecustomer/deleteinsurancecustomer.component';
+import { ServiceComponent } from './components/service/service/service.component';
+import { AddServiceComponent } from './components/service/add-service/add-service.component';
+import { UpdateServiceComponent } from './components/service/update-service/update-service.component';
+import { DeleteServiceComponent } from './components/service/delete-service/delete-service.component';
+import { TechnicalComponent } from './components/technical/technical/technical.component';
+import { AddTechnicalComponent } from './components/technical/add-technical/add-technical.component';
+import { UpdateTechnicalComponent } from './components/technical/update-technical/update-technical.component';
+import { DeleteTechnicalComponent } from './components/technical/delete-technical/delete-technical.component';
 
 
 @NgModule({
@@ -38,6 +64,27 @@ import { InicioComponent } from './components/inicio/inicio.component';
     NotfoundComponent,
     LoginComponent,
     InicioComponent,
+    EditarUsuarioComponent,
+    CostumerComponent,
+    AddCostumerComponent,
+    UpdateCostumerComponent,
+    DeleteCostumerComponent,
+    InsuranceComponent,
+    AddInsuranceComponent,
+    UpdateInsuranceComponent,
+    DeleteInsuranceComponent,
+    InsurancecustomerComponent,
+    AddinsurancecustomerComponent,
+    UpdateinsurancecustomerComponent,
+    DeleteinsurancecustomerComponent,
+    ServiceComponent,
+    AddServiceComponent,
+    UpdateServiceComponent,
+    DeleteServiceComponent,
+    TechnicalComponent,
+    AddTechnicalComponent,
+    UpdateTechnicalComponent,
+    DeleteTechnicalComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,16 +96,13 @@ import { InicioComponent } from './components/inicio/inicio.component';
     ReactiveFormsModule,
     ShContextMenuModule,
     AngularEditorModule,
-    BrowserModule,
     Ng2SearchPipeModule,
-    DataTablesModule,
-    PdfJsViewerModule,
     NgxPaginationModule,
-    PdfViewerModule,
     NgxPermissionsModule.forRoot(),
   ],
   providers: [
     DatePipe,
+    CanActivateViaAuthGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]

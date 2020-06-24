@@ -11,25 +11,6 @@
 
 <div class="uk-section-small">
   <div class="uk-container uk-container-large">
-    <div>
-
-      <div class="uk-card uk-card-default uk-card-body">
-        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-          <div>
-            <button class="uk-button uk-button-primary uk-button-large uk-width-1-1"
-              routerLink="/usuario">Usuarios</button>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class="uk-section-small">
-  <div class="uk-container uk-container-large">
     <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-4@xl">
       <div>
         <div class="uk-card uk-card-default uk-card-body">
@@ -65,10 +46,83 @@
         </div>
       </div>
     </div>
-      <div>
-      </div>
+    <div>
     </div>
   </div>
+</div>
+
+
 
 
 <!-- Load More Javascript -->
+
+
+<!-- End No data -->
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div uk-alert>
+      <h2>No hay datos <i class="fas fa-table"></i></h2>
+    </div>
+  </div>
+</div>
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div uk-alert>
+      <div class="uk-navbar-left">
+        <div class="uk-search uk-search-navbar">
+          <span uk-search-icon></span>
+          <input class="uk-search-input" type="text" placeholder="Buscar...">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-small uk-table-divider">
+            <thead>
+              <tr>
+                <th>Tipo de Servicio</th>
+                <th>Expediente</th>
+                <th>Ciudad</th>
+                <th>Departamento</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>ASEGURDORA</th>
+                <th>MOVIMIENTO ECONOMICO</th>
+                <th>TECNICO</th>
+                <th>PROCESO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PLOMERIA</td>
+                <td>123456</td>
+                <td>bogota</td>
+                <td>cundinamarca</td>
+                <td>21/06/2020</td>
+                <td style="background-color: red ;">PENDIENTE</td>
+                <td>andiasistencia</td>
+                <td>ninguno</td>
+                <td>daniel rodriguez</td>
+                <td>ventana mantenimiento</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="floating-button" style="border-radius: 50%;" routerLink="/usuario/agregar">
+  <span class="plus-circle" uk-icon="plus"></span>
+</div>

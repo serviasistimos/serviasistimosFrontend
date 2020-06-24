@@ -4,6 +4,7 @@ import { GeneralService } from 'src/app/services/general.service';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userService';
+import { EncryptService } from 'src/app/services/encrypt.service';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
     private readonly router: Router,
     private readonly userService: UserService,
     private readonly formBuilder: FormBuilder,
+    private readonly encryptService: EncryptService
   ) { }
 
 
@@ -34,11 +36,9 @@ export class LoginComponent implements OnInit {
       'email': this.data.value.email,
       'password': this.data.value.password
     };
-    console.log(data);
     this.userService.login(data).subscribe(
       res => {
-        localStorage.setItem('loginstatus', 'true');
-        localStorage.setItem('logindata', JSON.stringify(res));
+        this.encryptService.setValue(res);
         this.generalService.abrirMensaje('Ingreso correcto al sistema', 'success');
         window.location.href = '';
       }, err => {
