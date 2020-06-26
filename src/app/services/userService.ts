@@ -22,7 +22,13 @@ export class UserService extends BaseService {
     }
 
     getUsersById(id): any {
-        return this.getById(this.url, id);
+        return this.getById('user/getUser/', id);
+    }
+    updateUser(user): any {
+        return this.post('user/update/', user);
+    }
+    deleteUser(id): any {
+        return this.delete('user/deleteCostumer/', id);
     }
 
    postUser(user): any {

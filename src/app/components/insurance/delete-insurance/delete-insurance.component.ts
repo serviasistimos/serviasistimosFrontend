@@ -32,12 +32,10 @@ export class DeleteInsuranceComponent implements OnInit {
             this.router.navigate(['/insurance']);
           },
           error => {
-            console.log(error);
           }
         );
       }, err => {
         this.generalService.abrirMensaje('Verificar información', 'error');
-        console.log(<any>err);
       });
   }
 

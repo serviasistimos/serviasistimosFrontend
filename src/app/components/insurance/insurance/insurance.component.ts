@@ -21,7 +21,6 @@ export class InsuranceComponent implements OnInit {
       res => {
         this.insurance = res.insurance;
       }, err => {
-        console.log(err);
       });
   }
 

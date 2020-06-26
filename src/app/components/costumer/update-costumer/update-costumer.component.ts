@@ -44,7 +44,7 @@ export class UpdateCostumerComponent implements OnInit {
     this.costumerService.getCostumerById(this.idCustomer).subscribe(
       res => {
         this.customer = res.costumer;
-      }, err => { console.log(err); });
+      }, err => {  });
   }
 
 
@@ -57,10 +57,10 @@ export class UpdateCostumerComponent implements OnInit {
       city: this.formGroupUser.value.city,
       department: this.formGroupUser.value.department,
     };
-    this.addCostumer(data);
+    this.updateCostumer(data);
   }
 
-  addCostumer(data) {
+  updateCostumer(data) {
     this.costumerService.updateCostumer(data, this.idCustomer).subscribe(
       res => {
         this.generalService.abrirMensaje('Actualizado Correctamente', 'success');

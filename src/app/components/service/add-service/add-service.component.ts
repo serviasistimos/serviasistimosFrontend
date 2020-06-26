@@ -30,9 +30,6 @@ export class AddServiceComponent implements OnInit {
   ngOnInit() {
     this.idUser = this.encryptService.getValue();
     this.formGroupUser = this.formBuilder.group({
-      valueMaterials: ['', Validators.required],
-      valueAsistimos: ['', Validators.required],
-      valueCostumer: ['', Validators.required],
       commentary: ['', Validators.required],
       nameService: ['', Validators.required],
     });
@@ -42,9 +39,6 @@ export class AddServiceComponent implements OnInit {
 
   captureInformation() {
     const data = {
-      valueMaterials: this.formGroupUser.value.valueMaterials,
-      valueAsistimos: this.formGroupUser.value.valueAsistimos,
-      valueCostumer: this.formGroupUser.value.valueCostumer,
       commentary: this.formGroupUser.value.commentary,
       nameService: this.formGroupUser.value.nameService,
       user: this.idUser.user._id

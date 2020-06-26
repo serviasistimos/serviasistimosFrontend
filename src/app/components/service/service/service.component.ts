@@ -22,10 +22,8 @@ export class ServiceComponent implements OnInit {
   getCustomer() {
     this.serviceService.getService().subscribe(
       res => {
-        console.log(res);
         this.service = res.services;
       }, errror => {
-        console.log(errror);
       });
   }
 
@@ -33,9 +31,5 @@ export class ServiceComponent implements OnInit {
     this.idService = id;
   }
 
-  comment(comment) {
-    this.comentario = comment;
-    console.log(this.comentario);
-  }
 
 }

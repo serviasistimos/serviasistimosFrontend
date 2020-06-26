@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from 'src/app/services/general.service';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { TechnicalService } from 'src/app/services/techicalService';
 
 @Component({
   selector: 'app-add-technical',
@@ -7,9 +12,52 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTechnicalComponent implements OnInit {
 
-  constructor() { }
+  public formGroupUser: FormGroup;
+
+  constructor(
+    private readonly generalService: GeneralService,
+    private formBuilder: FormBuilder,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
+    private readonly technicalService: TechnicalService
+  ) { }
+
+
 
   ngOnInit() {
+    this.formGroupUser = this.formBuilder.group({
+      nameTechnical: ['', Validators.required],
+      lastNameTechnical: ['', Validators.required],
+      document: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
+      specialty: ['', Validators.required],
+    });
+  }
+
+
+
+  captureInformation() {
+    const data = {
+      nameTechnical: this.formGroupUser.value.nameTechnical,
+      lastNameTechnical: this.formGroupUser.value.lastNameTechnical,
+      document: this.formGroupUser.value.document,
+      email: this.formGroupUser.value.email,
+      phone: this.formGroupUser.value.phone,
+      specialty: this.formGroupUser.value.specialty
+    };
+    this.addCostumer(data);
+  }
+
+  addCostumer(data) {
+    this.technicalService.postTechnical(data).subscribe(
+      res => {
+        this.generalService.abrirMensaje('Agregado Correctamente', 'success');
+        this.router.navigate(['/technical']);
+      }, err => {
+        this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+      });
+
   }
 
 }

@@ -39,8 +39,7 @@ export class UpdateInsuranceComponent implements OnInit {
     this.insuranceServide.getInsuranceById(this.idInsurance).subscribe(
       res => {
         this.insurance = res.Insurance;
-        console.log(this.insurance);
-      }, err => { console.log(err); });
+      }, err => { });
   }
 
   captureInformation() {

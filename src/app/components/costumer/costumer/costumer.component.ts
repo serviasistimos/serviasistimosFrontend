@@ -21,7 +21,6 @@ export class CostumerComponent implements OnInit {
       res => {
         this.costumers = res.costumers;
       }, errror => {
-        console.log(errror);
       });
   }
 

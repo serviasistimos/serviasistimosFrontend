@@ -31,43 +31,30 @@
 </div>
 
 
+<div class="uk-section-small" *ngIf="service.length != 0">
+  <div class="uk-container uk-container-large">
 
+    <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center" uk-grid>
+
+      <div *ngFor="let servi of service | filter:term  | paginate: { itemsPerPage: 6, currentPage: p }"
+        [shAttachMenu]="menu" (contextmenu)="leftClick(servi._id)">
+        <div class="uk-card uk-card-default uk-card-body">
+          {{servi.nameService}}
+          <img src="../../../../assets/images/post.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="uk-section-small" *ngIf="service.length != 0">
   <div class="uk-container uk-container-large">
     <div>
       <div class="uk-card uk-card-default uk-card-body">
-        <div class="uk-overflow-auto">
-          <table class="uk-table uk-table-small uk-table-divider">
-            <thead>
-              <tr>
-                <th>P ServiAsistimos</th>
-                <th>P Cliente </th>
-                <th>Materiales</th>
-                <th>Fecha</th>
-                <th>Comentario</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let servi of service | filter:term | paginate: { itemsPerPage: 10, currentPage: p }"
-                [shAttachMenu]="menu" (contextmenu)="leftClick(costu._id)">
-                <td> {{servi.valueAsistimos}}</td>
-                <td>{{servi.valueCostumer}}</td>
-                <td>{{servi.valueMaterials}}</td>
-                <td>{{servi.created}}</td>
-                <td>
-                  <button class="uk-button uk-button-default" uk-toggle="target: #modal-close-default"
-                    (click)="comment(servi.commentary)">VER</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div style="text-align: center;">
-            <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente">
-            </pagination-controls>
-          </div>
+        <div style="text-align: center;">
+          <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente">
+          </pagination-controls>
         </div>
-
       </div>
     </div>
   </div>
@@ -83,13 +70,13 @@
   <ng-template shContextMenuItem>
     <div routerLink="/service/update/{{idService}}">
       <span uk-icon="icon: pencil"></span>
-      Editar Cliente
+      Editar Servicio
     </div>
   </ng-template>
   <ng-template shContextMenuItem>
     <div routerLink="/service/delete/{{idService}}">
       <span uk-icon="icon: trash"></span>
-      Eliminar Cliente
+      Eliminar Servicio
     </div>
   </ng-template>
 </sh-context-menu>

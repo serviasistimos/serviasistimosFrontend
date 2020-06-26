@@ -28,6 +28,11 @@ import { AddServiceComponent } from './components/service/add-service/add-servic
 import { UpdateServiceComponent } from './components/service/update-service/update-service.component';
 import { DeleteServiceComponent } from './components/service/delete-service/delete-service.component';
 
+import { TechnicalComponent } from './components/technical/technical/technical.component';
+import { AddTechnicalComponent } from './components/technical/add-technical/add-technical.component';
+import { UpdateTechnicalComponent } from './components/technical/update-technical/update-technical.component';
+import { DeleteTechnicalComponent } from './components/technical/delete-technical/delete-technical.component';
+
 
 
 
@@ -58,6 +63,11 @@ const routes: Routes = [
   { path: 'service/add', component: AddServiceComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'service/delete/:id', component: DeleteServiceComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'service/update/:id', component: UpdateServiceComponent, canActivate: [CanActivateViaAuthGuard] },
+
+  { path: 'technical', component: TechnicalComponent, canActivate: [CanActivateViaAuthGuard] },
+  { path: 'technical/add', component: AddTechnicalComponent, canActivate: [CanActivateViaAuthGuard] },
+  { path: 'technical/delete/:id', component: DeleteTechnicalComponent, canActivate: [CanActivateViaAuthGuard] },
+  { path: 'technical/update/:id', component: UpdateTechnicalComponent, canActivate: [CanActivateViaAuthGuard] },
 ];
 
 @NgModule({

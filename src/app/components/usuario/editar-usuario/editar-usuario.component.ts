@@ -12,6 +12,8 @@ import { UserService } from 'src/app/services/userService';
 export class EditarUsuarioComponent implements OnInit {
 
   public formGroupUser: FormGroup;
+  public idUser: any;
+  public user: any;
 
   constructor(
     private readonly generalService: GeneralService,
@@ -19,45 +21,46 @@ export class EditarUsuarioComponent implements OnInit {
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly userService: UserService
-  ) { }
+  ) {
+    this.user = new Object();
+  }
 
 
 
   ngOnInit() {
+    this.route.params.subscribe(params => this.idUser = params['id']);
     this.formGroupUser = this.formBuilder.group({
-      name: ['', Validators.required],
-      lastName: ['', Validators.required],
-      document: ['', Validators.required],
-      role: ['', Validators.required],
-      email: ['', [Validators.required,
-      Validators.email]
-      ],
-      nickname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       confirmpassword: ['', Validators.required],
     });
+    this.getUserById();
+  }
+
+  public async getUserById() {
+    this.userService.getUsersById(this.idUser).subscribe(
+      res => {
+        this.user = res.user;
+      }, err => { console.log(err); });
   }
 
   captureInformation() {
     if (this.formGroupUser.value.password === this.formGroupUser.value.confirmpassword) {
       const data = {
-        name: this.formGroupUser.value.name,
-        lastName: this.formGroupUser.value.lastName,
-        document: this.formGroupUser.value.document,
-        role: this.formGroupUser.value.role,
         email: this.formGroupUser.value.email,
-        nickname: this.formGroupUser.value.nickname,
         password: this.formGroupUser.value.password
       };
-      this.agregar(data);
+      this.updateUser(data);
     } else {
       this.generalService.abrirMensaje('Las contraseñas no coinciden', 'error');
     }
   }
 
-  agregar(data) {
-    this.userService.postUser(data).subscribe(
+  updateUser(data) {
+    this.userService.updateUser(data).subscribe(
       res => {
+        console.log(res);
+        this.router.navigate(['/usuario']);
         this.generalService.abrirMensaje('Agregado Correctamente', 'success');
       }, err => {
         this.generalService.abrirMensaje('Ocurrio un Error', 'error');

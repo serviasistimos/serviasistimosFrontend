@@ -31,12 +31,10 @@ export class DeleteCostumerComponent implements OnInit {
             this.router.navigate(['/costumer']);
           },
           error => {
-            console.log(error);
           }
         );
       }, err => {
         this.generalService.abrirMensaje('Verificar información', 'error');
-        console.log(<any>err);
       });
   }
 }

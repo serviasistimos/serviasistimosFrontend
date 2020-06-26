@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TechnicalService } from 'src/app/services/techicalService';
 
 @Component({
   selector: 'app-technical',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechnicalComponent implements OnInit {
 
-  constructor() { }
+  public technical: any = [];
+  public idTechnical: any;
+  constructor(private readonly technicalService: TechnicalService) { }
+
 
   ngOnInit() {
+    this.getCustomer();
   }
 
+  getCustomer() {
+    this.technicalService.getTechnical().subscribe(
+      res => {
+        this.technical = res.technical;
+      }, errror => {
+      });
+  }
+
+  leftClick(id) {
+    this.idTechnical = id;
+  }
 }
