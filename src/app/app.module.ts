@@ -1,19 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe, LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { ShContextMenuModule } from 'ng2-right-click-menu'
+import { ShContextMenuModule } from 'ng2-right-click-menu';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { NgxCurrencyModule } from 'ngx-currency';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { DataTablesModule } from 'angular-datatables';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { CommonModule } from '@angular/common';
 import { UsuarioComponent } from './components/usuario/usuario/usuario.component';
 import { EliminarUsuarioComponent } from './components/usuario/eliminar-usuario/eliminar-usuario.component';
@@ -50,6 +52,11 @@ import { TechnicalComponent } from './components/technical/technical/technical.c
 import { AddTechnicalComponent } from './components/technical/add-technical/add-technical.component';
 import { UpdateTechnicalComponent } from './components/technical/update-technical/update-technical.component';
 import { DeleteTechnicalComponent } from './components/technical/delete-technical/delete-technical.component';
+import { AddRequestComponent } from './components/request/add-request/add-request.component';
+import { UpdateRequestComponent } from './components/request/update-request/update-request.component';
+import { DeleteRequestComponent } from './components/request/delete-request/delete-request.component';
+import { RequestComponent } from './components/request/request/request.component';
+
 
 
 @NgModule({
@@ -85,6 +92,10 @@ import { DeleteTechnicalComponent } from './components/technical/delete-technica
     AddTechnicalComponent,
     UpdateTechnicalComponent,
     DeleteTechnicalComponent,
+    AddRequestComponent,
+    UpdateRequestComponent,
+    DeleteRequestComponent,
+    RequestComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,8 +109,11 @@ import { DeleteTechnicalComponent } from './components/technical/delete-technica
     AngularEditorModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
+    NgxCurrencyModule,
+    NgxSpinnerModule,
     NgxPermissionsModule.forRoot(),
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     DatePipe,
     CanActivateViaAuthGuard,

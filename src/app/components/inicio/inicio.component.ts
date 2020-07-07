@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private readonly generalService: GeneralService) { }
+  public requerimientos: any = [];
   ngOnInit() {
+  }
+
+  exportar() {
+    this.generalService.exportAsExcelFile(this.requerimientos, 'requerimientos' + new Date());
   }
 
 }

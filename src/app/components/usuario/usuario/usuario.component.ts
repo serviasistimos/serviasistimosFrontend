@@ -12,10 +12,11 @@ export class UsuarioComponent implements OnInit {
   public idUser: number;
   constructor(private readonly userService: UserService, private readonly generalService: GeneralService) {
     this.idUser = 0;
-   }
+  }
 
 
   ngOnInit() {
+    this.generalService.abrirSpinner();
     this.getUsers();
   }
 
@@ -23,13 +24,16 @@ export class UsuarioComponent implements OnInit {
     this.userService.getUsers().subscribe(
       res => {
         this.users = res.users;
+        this.generalService.cerrarSpinner();
       }, err => {
         this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+        this.generalService.cerrarSpinner();
       });
   }
 
   leftClick(id) {
     this.idUser = id;
   }
+
 
 }

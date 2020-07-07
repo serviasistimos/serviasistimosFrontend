@@ -14,10 +14,10 @@ export class TechnicalComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getCustomer();
+    this.getTechnical();
   }
 
-  getCustomer() {
+  getTechnical() {
     this.technicalService.getTechnical().subscribe(
       res => {
         this.technical = res.technical;
