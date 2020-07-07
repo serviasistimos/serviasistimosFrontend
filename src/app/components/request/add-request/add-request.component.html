@@ -44,17 +44,20 @@
 
           <div class="uk-width-1-2@s">
             <label class="uk-form-label" for="form-stacked-text">Valor Serviasitimos</label>
-            <input class="uk-input" type="text" formControlName="valueAsistimos" />
+            <input currencyMask [options]="{ prefix: '$ ', thousands: '.', decimal: ',' }" class="uk-input" type="text"
+              formControlName="valueAsistimos" />
           </div>
 
           <div class="uk-width-1-2@s">
             <label class="uk-form-label" for="form-stacked-text">Valor Cliente</label>
-            <input class="uk-input" type="text" formControlName="valueCostumer" />
+            <input currencyMask [options]="{ prefix: '$ ', thousands: '.', decimal: ',' }" class="uk-input" type="text"
+              formControlName="valueCostumer" />
           </div>
 
           <div class="uk-width-1-2@s">
             <label class="uk-form-label" for="form-stacked-text">Valor Materiales</label>
-            <input class="uk-input" type="text" formControlName="valueMaterials" />
+            <input currencyMask [options]="{ prefix: '$ ', thousands: '.', decimal: ',' }" class="uk-input" type="text"
+              formControlName="valueMaterials" />
           </div>
 
           <div class="uk-width-1-2@s">

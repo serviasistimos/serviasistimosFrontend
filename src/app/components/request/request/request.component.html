@@ -40,11 +40,11 @@
           <table class="uk-table uk-table-small uk-table-divider">
             <thead>
               <tr>
+                <th>Estado</th>
                 <th>Dirección</th>
                 <th>Ciudad</th>
                 <th>Departamento</th>
                 <th>Fecha Creación</th>
-                <th>Estado</th>
                 <th>Referencia</th>
                 <th>Telefono</th>
                 <th>Tecnico</th>
@@ -57,11 +57,13 @@
             <tbody>
               <tr *ngFor="let costu of request | filter:term | paginate: { itemsPerPage: 10, currentPage: p }"
                 [shAttachMenu]="menu" (contextmenu)="leftClick(costu._id)">
+                <td *ngIf="costu.state === 'pendiente'" style="background-color: orange;">
+                  <p style="color: aliceblue;">{{costu.state}}</p>
+                </td>
                 <td> {{costu.address}}</td>
                 <td>{{costu.city}}</td>
                 <td>{{costu.department}}</td>
                 <td>{{costu.created}}</td>
-                <td>{{costu.state}}</td>
                 <td>{{costu.reference}}</td>
                 <td>{{costu.phone}}</td>
                 <td>{{costu.technical}}</td>
@@ -95,19 +97,19 @@
   <ng-template shContextMenuItem>
     <div routerLink="/insurance/update/{{idRequest}}">
       <span uk-icon="icon: trash"></span>
-      Eliminar Seguro
+      Eliminar Requerimiento
     </div>
   </ng-template>
   <ng-template shContextMenuItem>
     <div routerLink="/insurance/delete/{{idRequest}}">
       <span uk-icon="icon: pencil"></span>
-      Editar Seguro
+      Editar Requerimiento
     </div>
   </ng-template>
   <ng-template shContextMenuItem>
     <div routerLink="/insurance/delete/{{idRequest}}">
       <span uk-icon="icon: pencil"></span>
-      Agregar Comentario
+      Agregar Requerimiento
     </div>
   </ng-template>
 </sh-context-menu>
