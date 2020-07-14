@@ -93,6 +93,19 @@
             </select>
           </div>
 
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Seguro</label>
+            <select class="uk-select" formControlName="insurance">
+              <option *ngFor="let insu of insurance" value="{{insu._id}}">{{insu.nameInsurance}}</option>
+            </select>
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Comentario Inicial</label>
+            <textarea class="uk-textarea" formControlName="commentary"></textarea>
+          </div>
+
           <div class="uk-width-1-1@s uk-flex uk-flex-center">
             <button class="uk-button uk-button-primary submitbutton" type="submit" [disabled]="!formGroupUser.valid">
               Guardar

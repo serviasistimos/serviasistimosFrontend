@@ -12,6 +12,7 @@ export class RequestComponent implements OnInit {
 
   public request: any = [];
   exportararchivo: any = [];
+  public comentary: any = [];
   public idRequest: any = [];
   constructor(private readonly requestService: RequestService,
     private readonly generalService: GeneralService) { }
@@ -24,7 +25,6 @@ export class RequestComponent implements OnInit {
     this.requestService.getRequest().subscribe(
       res => {
         this.request = res.request;
-        console.log(this.request);
       }, err => {
       });
   }
@@ -45,7 +45,8 @@ export class RequestComponent implements OnInit {
         'Referencia': element.reference,
         'Servicio': element.service,
         'Seguro': 'prueba daniel',
-        'Tecnico': element.technical,
+        'Nombre Tecnico': element.technical,
+        'Apellido Tecnico': element.technical,
         'Cliente': element.costumer,
         'Valor ServiAssitimos': element.valueAsistimos,
         'Valor Cliente': element.valueCostumer,
@@ -54,9 +55,12 @@ export class RequestComponent implements OnInit {
       };
       this.exportararchivo.push(data);
     });
-    console.log(this.exportararchivo);
     this.generalService.exportAsExcelFile(this.exportararchivo, 'Requerimiento');
 
+  }
+
+  modalComentario(com) {
+    this.comentary = com;
   }
 
 }

@@ -4,8 +4,6 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { RequestService } from 'src/app/services/requestService';
-import { tap, finalize } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { ServicesService } from 'src/app/services/servicesService';
 import { CostumerService } from 'src/app/services/costumerService';
 import { TechnicalService } from 'src/app/services/techicalService';
@@ -59,7 +57,9 @@ export class AddRequestComponent implements OnInit {
       state: ['', Validators.required],
       costumer: ['', Validators.required],
       service: ['', Validators.required],
-      technical: ['', Validators.required]
+      technical: ['', Validators.required],
+      insurance: ['', Validators.required],
+      commentary: ['', Validators.required]
     });
   }
 
@@ -102,6 +102,11 @@ export class AddRequestComponent implements OnInit {
 
 
   captureInformation() {
+    const insurance = this.insurance.filter(x => x._id === this.formGroupUser.value.insurance);
+    const service = this.service.filter(x => x._id === this.formGroupUser.value.service);
+    const technical = this.technical.filter(x => x._id === this.formGroupUser.value.technical);
+    const costumer = this.costumers.filter(x => x._id === this.formGroupUser.value.costumer);
+
     const data = {
       valueMaterials: this.formGroupUser.value.valueMaterials,
       valueAsistimos: this.formGroupUser.value.valueAsistimos,
@@ -115,20 +120,24 @@ export class AddRequestComponent implements OnInit {
       costumer: this.formGroupUser.value.costumer,
       service: this.formGroupUser.value.service,
       technical: this.formGroupUser.value.technical,
-      user: this.user.user._id
+      insurance: this.formGroupUser.value.insurance,
+      user: this.user.user._id,
+      commentary: this.formGroupUser.value.commentary,
+      nameCostumer: costumer[0].nameCostumer,
+      nameService: service[0].nameService,
+      nameTechnical: technical[0].nameTechnical,
+      nameInsurance: insurance[0].nameInsurance,
+      lastnameTechnical: technical[0].lastNameTechnical,
     };
-    console.log(data);
     this.agregar(data);
   }
 
   agregar(data) {
     this.requestService.postRequest(data).subscribe(
       res => {
-        console.log(res);
         this.generalService.abrirMensaje('Agregado Correctamente', 'success');
         this.router.navigate(['/request']);
       }, err => {
-        console.log(err);
         this.generalService.abrirMensaje('Ocurrio un Error', 'error');
       });
 

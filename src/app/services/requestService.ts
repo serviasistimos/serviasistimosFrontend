@@ -25,12 +25,16 @@ export class RequestService extends BaseService {
     getRequest(): any {
         return this.get('request/getRequests');
     }
-    getInsuranceById(id): any {
+    getRequestById(id): any {
         return this.getById('request/request/', id);
     }
 
     deleteRequest(id): any {
         return this.delete('request/deleteRequest/', id);
+    }
+
+    addCommentary(data): any {
+        return this.post('requestCommentary/createRequestCommentary/', data);
     }
 
 

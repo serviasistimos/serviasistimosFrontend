@@ -50,6 +50,11 @@ export class BaseService extends EncryptService {
         return this.http.delete(this.path + url + id, { headers: this.initializeHeader() });
     }
 
+    loginn(url, data) {
+        const params = data;
+        return this.http.post(this.path + url, params, { headers: new HttpHeaders({'Content-Type': 'application/json', 'x-token': ''})
+        });
+    }
 
 
 }

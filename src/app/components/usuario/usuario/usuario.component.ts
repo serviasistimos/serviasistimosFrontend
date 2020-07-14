@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/userService';
 import { GeneralService } from 'src/app/services/general.service';
+import { EncryptService } from 'src/app/services/encrypt.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -9,9 +10,14 @@ import { GeneralService } from 'src/app/services/general.service';
 })
 export class UsuarioComponent implements OnInit {
   public users: any = [];
+  public user: any = [];
   public idUser: number;
-  constructor(private readonly userService: UserService, private readonly generalService: GeneralService) {
+  constructor(
+    private readonly userService: UserService,
+    private readonly generalService: GeneralService,
+    private readonly encryptService: EncryptService) {
     this.idUser = 0;
+    this.user = this.encryptService.getValue().user;
   }
 
 

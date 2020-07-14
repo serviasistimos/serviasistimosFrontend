@@ -41,13 +41,16 @@
             <thead>
               <tr>
                 <th>Estado</th>
+                <th>Referencia</th>
                 <th>Dirección</th>
                 <th>Ciudad</th>
                 <th>Departamento</th>
                 <th>Fecha Creación</th>
-                <th>Referencia</th>
                 <th>Telefono</th>
+                <th>Seguro</th>
+                <th>Cliente</th>
                 <th>Tecnico</th>
+                <th>Comentario</th>
                 <th>Valor ServiAsistimos</th>
                 <th>Valor Cliente</th>
                 <th>Valor Materiales</th>
@@ -57,16 +60,28 @@
             <tbody>
               <tr *ngFor="let costu of request | filter:term | paginate: { itemsPerPage: 10, currentPage: p }"
                 [shAttachMenu]="menu" (contextmenu)="leftClick(costu._id)">
-                <td *ngIf="costu.state === 'pendiente'" style="background-color: orange;">
+                <td *ngIf="costu.state === 'EN PROGRESO'" style="background-color: rgb(253, 164, 0);">
                   <p style="color: aliceblue;">{{costu.state}}</p>
                 </td>
+                <td *ngIf="costu.state === 'PENDIENTE'" style="background-color: rgb(255, 0, 0);">
+                  <p style="color: aliceblue;">{{costu.state}}</p>
+                </td>
+                <td *ngIf="costu.state === 'TERMINADO'" style="background-color: rgb(0, 253, 42);">
+                  <p style="color: aliceblue;">{{costu.state}}</p>
+                </td>
+                <td>{{costu.reference}}</td>
                 <td> {{costu.address}}</td>
                 <td>{{costu.city}}</td>
                 <td>{{costu.department}}</td>
                 <td>{{costu.created}}</td>
-                <td>{{costu.reference}}</td>
                 <td>{{costu.phone}}</td>
-                <td>{{costu.technical}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <button class="uk-button uk-button-default uk-margin-small-right" type="button"
+                    uk-toggle="target: #modal-example" (click)="modalComentario(costu.commentary)">VER</button>
+                </td>
                 <td>{{costu.valueAsistimos}}</td>
                 <td>{{costu.valueCostumer}}</td>
                 <td>{{costu.valueMaterials}}</td>
@@ -95,21 +110,32 @@
 
 <sh-context-menu #menu>
   <ng-template shContextMenuItem>
-    <div routerLink="/insurance/update/{{idRequest}}">
+    <div routerLink="/request/delete/{{idRequest}}">
       <span uk-icon="icon: trash"></span>
       Eliminar Requerimiento
     </div>
   </ng-template>
   <ng-template shContextMenuItem>
-    <div routerLink="/insurance/delete/{{idRequest}}">
+    <div routerLink="/request/update/{{idRequest}}">
       <span uk-icon="icon: pencil"></span>
       Editar Requerimiento
     </div>
   </ng-template>
   <ng-template shContextMenuItem>
-    <div routerLink="/insurance/delete/{{idRequest}}">
-      <span uk-icon="icon: pencil"></span>
-      Agregar Requerimiento
+    <div routerLink="/request/add/commentary/{{idRequest}}">
+      <span uk-icon="icon: plus"></span>
+      Agregar Comentario
     </div>
   </ng-template>
 </sh-context-menu>
+
+
+
+<!--MODAL-->
+<div id="modal-example" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <button class="uk-modal-close-outside" type="button" uk-close></button>
+    <h2 class="uk-modal-title">Comentario</h2>
+    <p>{{comentary}}</p>
+  </div>
+</div>

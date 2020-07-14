@@ -38,6 +38,8 @@ import { UpdateRequestComponent } from './components/request/update-request/upda
 import { DeleteRequestComponent } from './components/request/delete-request/delete-request.component';
 import { RequestComponent } from './components/request/request/request.component';
 
+import { CommentaryComponent } from './components/request/commentary/commentary/commentary.component';
+
 
 
 
@@ -51,6 +53,7 @@ const routes: Routes = [
   { path: 'usuario/agregar', component: AgregarUsuarioComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'usuario/eliminar/:id', component: EliminarUsuarioComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'usuario/editar/:id', component: EditarUsuarioComponent, canActivate: [CanActivateViaAuthGuard] },
+  
   { path: 'costumer', component: CostumerComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'costumer/add', component: AddCostumerComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'costumer/delete/:id', component: DeleteCostumerComponent, canActivate: [CanActivateViaAuthGuard] },
@@ -78,6 +81,8 @@ const routes: Routes = [
   { path: 'request/add', component: AddRequestComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'request/delete/:id', component: DeleteRequestComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'request/update/:id', component: UpdateRequestComponent, canActivate: [CanActivateViaAuthGuard] },
+
+  { path: 'request/add/commentary/:id', component: CommentaryComponent, canActivate: [CanActivateViaAuthGuard] },
 ];
 
 @NgModule({

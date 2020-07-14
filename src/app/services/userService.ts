@@ -28,15 +28,15 @@ export class UserService extends BaseService {
         return this.post('user/update/', user);
     }
     deleteUser(id): any {
-        return this.delete('user/deleteCostumer/', id);
+        return this.delete('user/deleteUser/', id);
     }
 
-   postUser(user): any {
+    postUser(user): any {
         return this.post('user/create', user);
     }
 
     login(user): any {
-        return this.post('user/login', user);
+        return this.loginn('user/login', user);
     }
 
 }
