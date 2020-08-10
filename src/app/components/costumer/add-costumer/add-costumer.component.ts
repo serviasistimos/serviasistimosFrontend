@@ -50,12 +50,15 @@ export class AddCostumerComponent implements OnInit {
   addCostumer(data) {
     this.costumerService.postCostumer(data).subscribe(
       res => {
-        this.generalService.abrirMensaje('Agregado Correctamente', 'success');
-        this.router.navigate(['/costumer']);
+        if (res.ok) {
+          this.generalService.abrirMensaje('Agregado Correctamente', 'success');
+          this.router.navigate(['/costumer']);
+        } else {
+          this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+        }
       }, err => {
-        this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+        this.generalService.abrirMensaje('Error de Servidor', 'error');
       });
-
   }
 
 

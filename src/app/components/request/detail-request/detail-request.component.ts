@@ -12,11 +12,12 @@ import { User } from 'src/app/models/user';
 import { InsuranceService } from 'src/app/services/insuranceService';
 
 @Component({
-  selector: 'app-update-request',
-  templateUrl: './update-request.component.html',
-  styleUrls: ['./update-request.component.scss']
+  selector: 'app-detail-request',
+  templateUrl: './detail-request.component.html',
+  styleUrls: ['./detail-request.component.scss']
 })
-export class UpdateRequestComponent implements OnInit {
+export class DetailRequestComponent implements OnInit {
+
   public formGroupUser: FormGroup;
   public costumers: any = [];
   public service: any = [];
@@ -62,10 +63,7 @@ export class UpdateRequestComponent implements OnInit {
       service: ['', Validators.required],
       technical: ['', Validators.required],
       insurance: ['', Validators.required],
-      commentary: ['', Validators.required],
-      workforce: ['', Validators.required],
-      bill: ['', Validators.required],
-      materials: ['', Validators.required]
+      commentary: ['', Validators.required]
     });
   }
 
@@ -148,9 +146,6 @@ export class UpdateRequestComponent implements OnInit {
       nameTechnical: technical[0].nameTechnical,
       nameInsurance: insurance[0].nameInsurance,
       lastnameTechnical: technical[0].lastNameTechnical,
-      workforce: this.formGroupUser.value.workforce,
-      bill: this.formGroupUser.value.bill,
-      materials: this.formGroupUser.value.materials
     };
     this.agregar(data);
   }
@@ -158,16 +153,14 @@ export class UpdateRequestComponent implements OnInit {
   agregar(data) {
     this.requestService.updateRequest(data, this.idRequest).subscribe(
       res => {
-        if (res.ok) {
-          this.generalService.abrirMensaje('Agregado Correctamente', 'success');
-          this.router.navigate(['/request']);
-        } else {
-          this.generalService.abrirMensaje('Ocurrio un Error', 'error');
-        }
-
+        console.log(res);
+        this.generalService.abrirMensaje('Agregado Correctamente', 'success');
+        this.router.navigate(['/request']);
       }, err => {
-        this.generalService.abrirMensaje('Error de Servidor', 'error');
+        console.log(err);
+        this.generalService.abrirMensaje('Ocurrio un Error', 'error');
       });
 
   }
+
 }

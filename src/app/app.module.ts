@@ -57,6 +57,7 @@ import { UpdateRequestComponent } from './components/request/update-request/upda
 import { DeleteRequestComponent } from './components/request/delete-request/delete-request.component';
 import { RequestComponent } from './components/request/request/request.component';
 import { CommentaryComponent } from './components/request/commentary/commentary/commentary.component';
+import { DetailRequestComponent } from './components/request/detail-request/detail-request.component';
 
 
 
@@ -98,6 +99,7 @@ import { CommentaryComponent } from './components/request/commentary/commentary/
     DeleteRequestComponent,
     RequestComponent,
     CommentaryComponent,
+    DetailRequestComponent,
   ],
   imports: [
     BrowserModule,

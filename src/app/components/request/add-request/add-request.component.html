@@ -38,7 +38,7 @@
           </div>
 
           <div class="uk-width-1-2@s">
-            <label class="uk-form-label" for="form-stacked-text">Numero</label>
+            <label class="uk-form-label" for="form-stacked-text">Celular</label>
             <input class="uk-input" type="text" formControlName="phone" />
           </div>
 
@@ -58,6 +58,17 @@
             <label class="uk-form-label" for="form-stacked-text">Valor Materiales</label>
             <input currencyMask [options]="{ prefix: '$ ', thousands: '.', decimal: ',' }" class="uk-input" type="text"
               formControlName="valueMaterials" />
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Valor Mano de Obra</label>
+            <input currencyMask [options]="{ prefix: '$ ', thousands: '.', decimal: ',' }" class="uk-input" type="text"
+              formControlName="workforce" />
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Factura</label>
+            <input class="uk-input" type="number" formControlName="bill" />
           </div>
 
           <div class="uk-width-1-2@s">
@@ -104,6 +115,12 @@
           <div class="uk-width-1-1@s">
             <label class="uk-form-label" for="form-stacked-text">Comentario Inicial</label>
             <textarea class="uk-textarea" formControlName="commentary"></textarea>
+          </div>
+
+
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label" for="form-stacked-text">Materiales</label>
+            <textarea class="uk-textarea" formControlName="materials"></textarea>
           </div>
 
           <div class="uk-width-1-1@s uk-flex uk-flex-center">

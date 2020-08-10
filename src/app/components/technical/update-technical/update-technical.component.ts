@@ -36,6 +36,7 @@ export class UpdateTechnicalComponent implements OnInit {
       email: ['', Validators.required],
       phone: ['', Validators.required],
       specialty: ['', Validators.required],
+      numberBill: ['', Validators.required]
     });
     this.getTechnical();
   }
@@ -56,7 +57,8 @@ export class UpdateTechnicalComponent implements OnInit {
       document: this.formGroupUser.value.document,
       email: this.formGroupUser.value.email,
       phone: this.formGroupUser.value.phone,
-      specialty: this.formGroupUser.value.specialty
+      specialty: this.formGroupUser.value.specialty,
+      numberBill: this.formGroupUser.value.numberBill
     };
     this.updateTechnical(data);
   }
@@ -64,10 +66,15 @@ export class UpdateTechnicalComponent implements OnInit {
   updateTechnical(data) {
     this.technicalService.updateTechnical(data, this.idTechnical).subscribe(
       res => {
-        this.generalService.abrirMensaje('Agregado Correctamente', 'success');
-        this.router.navigate(['/technical']);
+        if (res.ok) {
+          this.generalService.abrirMensaje('Agregado Correctamente', 'success');
+          this.router.navigate(['/technical']);
+        } else {
+          this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+        }
+
       }, err => {
-        this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+        this.generalService.abrirMensaje('Error de servidor', 'error');
       });
 
   }

@@ -24,7 +24,7 @@ export class UpdateCostumerComponent implements OnInit {
     private route: ActivatedRoute,
   ) {
     this.customer = new Object();
-   }
+  }
 
 
 
@@ -44,7 +44,7 @@ export class UpdateCostumerComponent implements OnInit {
     this.costumerService.getCostumerById(this.idCustomer).subscribe(
       res => {
         this.customer = res.costumer;
-      }, err => {  });
+      }, err => { });
   }
 
 
@@ -63,10 +63,14 @@ export class UpdateCostumerComponent implements OnInit {
   updateCostumer(data) {
     this.costumerService.updateCostumer(data, this.idCustomer).subscribe(
       res => {
-        this.generalService.abrirMensaje('Actualizado Correctamente', 'success');
-        this.router.navigate(['/costumer']);
+        if (res.ok) {
+          this.generalService.abrirMensaje('Actualizado Correctamente', 'success');
+          this.router.navigate(['/costumer']);
+        } else {
+          this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+        }
       }, err => {
-        this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+        this.generalService.abrirMensaje('Error de Servidor', 'error');
       });
 
   }

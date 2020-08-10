@@ -59,7 +59,10 @@ export class AddRequestComponent implements OnInit {
       service: ['', Validators.required],
       technical: ['', Validators.required],
       insurance: ['', Validators.required],
-      commentary: ['', Validators.required]
+      commentary: ['', Validators.required],
+      workforce: ['', Validators.required],
+      bill: ['', Validators.required],
+      materials: ['', Validators.required]
     });
   }
 
@@ -128,6 +131,9 @@ export class AddRequestComponent implements OnInit {
       nameTechnical: technical[0].nameTechnical,
       nameInsurance: insurance[0].nameInsurance,
       lastnameTechnical: technical[0].lastNameTechnical,
+      workforce: this.formGroupUser.value.workforce,
+      bill: this.formGroupUser.value.bill,
+      materials: this.formGroupUser.value.materials
     };
     this.agregar(data);
   }
@@ -135,10 +141,14 @@ export class AddRequestComponent implements OnInit {
   agregar(data) {
     this.requestService.postRequest(data).subscribe(
       res => {
-        this.generalService.abrirMensaje('Agregado Correctamente', 'success');
-        this.router.navigate(['/request']);
+        if (res.ok) {
+          this.generalService.abrirMensaje('Agregado Correctamente', 'success');
+          this.router.navigate(['/request']);
+        } else {
+          this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+        }
       }, err => {
-        this.generalService.abrirMensaje('Ocurrio un Error', 'error');
+        this.generalService.abrirMensaje('Error de Servidor', 'error');
       });
 
   }

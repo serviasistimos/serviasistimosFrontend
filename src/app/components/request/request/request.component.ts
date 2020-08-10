@@ -11,9 +11,10 @@ import { GeneralService } from 'src/app/services/general.service';
 export class RequestComponent implements OnInit {
 
   public request: any = [];
-  exportararchivo: any = [];
+  public exportararchivo: any = [];
   public comentary: any = [];
   public idRequest: any = [];
+  public tittle: any;
   constructor(private readonly requestService: RequestService,
     private readonly generalService: GeneralService) { }
 
@@ -25,6 +26,7 @@ export class RequestComponent implements OnInit {
     this.requestService.getRequest().subscribe(
       res => {
         this.request = res.request;
+        console.log(this.request);
       }, err => {
       });
   }
@@ -51,7 +53,9 @@ export class RequestComponent implements OnInit {
         'Valor ServiAssitimos': element.valueAsistimos,
         'Valor Cliente': element.valueCostumer,
         'Valor Materiales': element.valueMaterials,
-        'Total Valor': (element.valueAsistimos + element.valueCostumer + element.valueMaterials)
+        'Valor Mano de Obra': element.workforce,
+        'Factura': element.bill,
+        'Materiales': element.materials,
       };
       this.exportararchivo.push(data);
     });
@@ -59,7 +63,8 @@ export class RequestComponent implements OnInit {
 
   }
 
-  modalComentario(com) {
+  modalComentario(com, nombre) {
+    this.tittle = nombre;
     this.comentary = com;
   }
 
