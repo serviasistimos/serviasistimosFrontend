@@ -21,6 +21,7 @@ export class TechnicalComponent implements OnInit {
     this.technicalService.getTechnical().subscribe(
       res => {
         this.technical = res.technical;
+        console.log(this.technical);
       }, errror => {
       });
   }

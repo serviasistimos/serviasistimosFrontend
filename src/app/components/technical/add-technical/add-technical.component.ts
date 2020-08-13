@@ -32,7 +32,8 @@ export class AddTechnicalComponent implements OnInit {
       email: ['', Validators.required],
       phone: ['', Validators.required],
       specialty: ['', Validators.required],
-      numberBill: ['', Validators.required]
+      numberBill: ['', Validators.required],
+      bank: ['', Validators.required]
     });
   }
 
@@ -46,7 +47,8 @@ export class AddTechnicalComponent implements OnInit {
       email: this.formGroupUser.value.email,
       phone: this.formGroupUser.value.phone,
       specialty: this.formGroupUser.value.specialty,
-      numberBill: this.formGroupUser.value.numberBill
+      numberBill: this.formGroupUser.value.numberBill,
+      bank: this.formGroupUser.value.bank
     };
     this.addCostumer(data);
   }
