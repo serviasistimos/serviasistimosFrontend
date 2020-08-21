@@ -38,9 +38,14 @@ export class LoginComponent implements OnInit {
     };
     this.userService.login(data).subscribe(
       res => {
-        this.encryptService.setValue(res);
-        this.generalService.abrirMensaje('Ingreso correcto al sistema', 'success');
-        window.location.href = '';
+        if (res.ok) {
+          this.encryptService.setValue(res);
+          this.generalService.abrirMensaje('Ingreso correcto al sistema', 'success');
+          window.location.href = '';
+        } else {
+          this.generalService.abrirMensaje('Verificar información', 'error');
+        }
+
       }, err => {
         this.generalService.abrirMensaje('Verificar información', 'error');
       });
