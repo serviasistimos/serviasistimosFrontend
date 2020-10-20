@@ -46,7 +46,7 @@ export class RequestComponent implements OnInit {
         'Telefono': element.phone,
         'Referencia': element.reference,
         'Servicio': element.service,
-        'Seguro': 'prueba daniel',
+        'Seguro': element.nameInsurance,
         'Nombre Tecnico': element.technical,
         'Apellido Tecnico': element.technical,
         'Cliente': element.costumer,
@@ -56,6 +56,7 @@ export class RequestComponent implements OnInit {
         'Valor Mano de Obra': element.workforce,
         'Factura': element.bill,
         'Materiales': element.materials,
+        'Usuario Creación': element.user.name + '-' + element.user.lastName
       };
       this.exportararchivo.push(data);
     });

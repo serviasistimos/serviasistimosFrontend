@@ -50,8 +50,8 @@ import { DetailRequestComponent } from './components/request/detail-request/deta
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: '', component: LoginComponent },
-  { path: 'usuario', component: UsuarioComponent, canActivate: [CanActivateViaAuthGuard] },
-  { path: 'usuario/agregar', component: AgregarUsuarioComponent, canActivate: [CanActivateViaAuthGuard] },
+  { path: 'usuario', component: UsuarioComponent },
+  { path: 'usuario/agregar', component: AgregarUsuarioComponent },
   { path: 'usuario/eliminar/:id', component: EliminarUsuarioComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'usuario/editar/:id', component: EditarUsuarioComponent, canActivate: [CanActivateViaAuthGuard] },
 

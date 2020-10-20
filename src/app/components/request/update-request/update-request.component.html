@@ -63,7 +63,7 @@
           <div class="uk-width-1-2@s">
             <label class="uk-form-label" for="form-stacked-text">Valor Mano de Obra</label>
             <input currencyMask [options]="{ prefix: '$ ', thousands: '.', decimal: ',' }" class="uk-input" type="text"
-              formControlName="workforce" [(ngModel)]="request.workforce"/>
+              formControlName="workforce" [(ngModel)]="request.workforce" />
           </div>
 
           <div class="uk-width-1-2@s">
@@ -133,9 +133,7 @@
   </div>
 </div>
 
-<div id="floating-button" style="border-radius: 50%;" routerLink="/request/add/commentary/{{idRequest}}">
-  <span class="plus-circle" uk-icon="plus"></span>
-</div>
+
 
 <div class="uk-section-small">
   <div class="uk-container uk-container-large">
@@ -150,4 +148,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div id="floating-button" style="border-radius: 50%;" routerLink="/request/add/commentary/{{idRequest}}">
+  <span class="plus-circle" uk-icon="plus"></span>
 </div>

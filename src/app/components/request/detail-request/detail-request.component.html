@@ -34,7 +34,7 @@
           </div>
 
           <div class="uk-width-1-2@s">
-            <label class="uk-form-label" for="form-stacked-text">Referencia</label>
+            <label class="uk-form-label" for="form-stacked-text">Asistencia</label>
             <input class="uk-input" type="text" disabled formControlName="reference" [(ngModel)]="request.reference" />
           </div>
 
@@ -127,4 +127,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div id="floating-button" style="border-radius: 50%;" routerLink="/request/add/commentary/{{idRequest}}">
+  <span class="plus-circle" uk-icon="plus"></span>
 </div>

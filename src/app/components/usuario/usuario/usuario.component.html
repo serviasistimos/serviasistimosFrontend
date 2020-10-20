@@ -77,22 +77,16 @@
 <!-- Clic derecho -->
 
 <sh-context-menu #menu>
-  <ng-template shContextMenuItem *ngIf="user._id === idUser">
+  <ng-template shContextMenuItem >
     <div routerLink="/usuario/editar/{{idUser}}">
       <span uk-icon="icon: pencil"></span>
       Editar Usuario
     </div>
   </ng-template>
-  <!-- <ng-template shContextMenuItem>
+  <ng-template shContextMenuItem>
     <div routerLink="/usuario/eliminar/{{idUser}}">
       <span uk-icon="icon: trash"></span>
       Eliminar Usuario
-    </div>
-  </ng-template> -->
-  <ng-template shContextMenuItem *ngIf="user._id != idUser">
-    <div>
-      <span uk-icon="icon: info"></span>
-      No tienes permisos
     </div>
   </ng-template>
 </sh-context-menu>
