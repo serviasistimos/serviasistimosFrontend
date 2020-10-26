@@ -21,24 +21,24 @@ export class EliminarUsuarioComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => this.isUser = params['id']);
   }
-  eliminar() {  
+  eliminar() {
     this.generalService.abrirConfirmacion().subscribe(
       response => {
-        this.generalService.abrirSpinner();
+
         this.userService.deleteUser(this.isUser).subscribe(
           res => {
             this.generalService.abrirMensaje('Se ha eliminado correctamente', 'success');
             this.router.navigate(['/usuario']);
-            this.generalService.cerrarSpinner();
+
           },
           error => {
-            this.generalService.cerrarSpinner();
+
             this.generalService.abrirMensaje('Verificar información', 'error');
           }
         );
       }, err => {
         this.generalService.abrirMensaje('Verificar información', 'error');
-        this.generalService.cerrarSpinner();
+
       });
   }
 }

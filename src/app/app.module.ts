@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DatePipe, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ShContextMenuModule } from 'ng2-right-click-menu';
 import { AngularEditorModule } from '@kolkov/angular-editor';
@@ -58,6 +58,7 @@ import { DeleteRequestComponent } from './components/request/delete-request/dele
 import { RequestComponent } from './components/request/request/request.component';
 import { CommentaryComponent } from './components/request/commentary/commentary/commentary.component';
 import { DetailRequestComponent } from './components/request/detail-request/detail-request.component';
+import { HTTPLoaderInterceptorService } from './utilities/http-loader-interceptor';
 
 
 
@@ -121,8 +122,14 @@ import { DetailRequestComponent } from './components/request/detail-request/deta
   providers: [
     DatePipe,
     CanActivateViaAuthGuard,
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HTTPLoaderInterceptorService,
+      multi: true
+    }
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

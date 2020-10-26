@@ -70,10 +70,17 @@
                 <td *ngIf="costu.state === 'PENDIENTE'" style="background-color: rgb(255, 0, 0);">
                   <p style="color: aliceblue;">{{costu.state}}</p>
                 </td>
+                <td *ngIf="costu.state === 'VISITA'" style="background-color: rgb(255, 0, 0);">
+                  <p style="color: aliceblue;">{{costu.state}}</p>
+                </td>
+                
                 <td *ngIf="costu.state === 'TERMINADO'" style="background-color: rgb(0, 253, 42);">
                   <p style="color: aliceblue;">{{costu.state}}</p>
                 </td>
-                <td>{{costu.reference}}</td>
+                <td *ngIf="costu.state === 'EFECTIVO'" style="background-color: rgb(0, 253, 42);">
+                  <p style="color: aliceblue;">{{costu.state}}</p>
+                </td>
+                <td>{{costu.assistance}}</td>
                 <td> {{costu.address}}</td>
                 <td>{{costu.city}}</td>
                 <td>{{costu.department}}</td>

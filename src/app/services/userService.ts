@@ -25,7 +25,7 @@ export class UserService extends BaseService {
         return this.getById('user/getUser/', id);
     }
     updateUser(user): any {
-        return this.post('user/update/', user);
+        return this.put('user/update', user);
     }
     deleteUser(id): any {
         return this.delete('user/deleteUser/', id);

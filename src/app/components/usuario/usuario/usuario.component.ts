@@ -18,11 +18,11 @@ export class UsuarioComponent implements OnInit {
     private readonly encryptService: EncryptService) {
     this.idUser = 0;
     this.user = this.encryptService.getValue().user;
+    console.log(this.user);
   }
 
 
   ngOnInit() {
-    this.generalService.abrirSpinner();
     this.getUsers();
   }
 
@@ -30,10 +30,8 @@ export class UsuarioComponent implements OnInit {
     this.userService.getUsers().subscribe(
       res => {
         this.users = res.users;
-        this.generalService.cerrarSpinner();
       }, err => {
         this.generalService.abrirMensaje('Ocurrio un Error', 'error');
-        this.generalService.cerrarSpinner();
       });
   }
 

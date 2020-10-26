@@ -45,6 +45,10 @@ export class BaseService extends EncryptService {
         const params = (data);
         return this.http.put(this.path + url + id, params, { headers: this.initializeHeader() });
     }
+    put(url, data): any {
+        const params = (data);
+        return this.http.put(this.path + url, params, { headers: this.initializeHeader() });
+    }
 
     delete(url, id) {
         return this.http.delete(this.path + url + id, { headers: this.initializeHeader() });

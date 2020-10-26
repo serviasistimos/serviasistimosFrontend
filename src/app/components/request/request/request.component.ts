@@ -26,7 +26,6 @@ export class RequestComponent implements OnInit {
     this.requestService.getRequest().subscribe(
       res => {
         this.request = res.request;
-        console.log(this.request);
       }, err => {
       });
   }

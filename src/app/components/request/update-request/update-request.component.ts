@@ -65,7 +65,8 @@ export class UpdateRequestComponent implements OnInit {
       commentary: ['', Validators.required],
       workforce: ['', Validators.required],
       bill: ['', Validators.required],
-      materials: ['', Validators.required]
+      materials: ['', Validators.required],
+      economicMovement: ['', Validators.required]
     });
   }
 
@@ -131,7 +132,7 @@ export class UpdateRequestComponent implements OnInit {
       valueMaterials: this.formGroupUser.value.valueMaterials,
       valueAsistimos: this.formGroupUser.value.valueAsistimos,
       valueCostumer: this.formGroupUser.value.valueCostumer,
-      reference: this.formGroupUser.value.reference,
+      assistance: this.formGroupUser.value.reference,
       phone: this.formGroupUser.value.phone,
       address: this.formGroupUser.value.address,
       city: this.formGroupUser.value.city,
@@ -150,7 +151,8 @@ export class UpdateRequestComponent implements OnInit {
       lastnameTechnical: technical[0].lastNameTechnical,
       workforce: this.formGroupUser.value.workforce,
       bill: this.formGroupUser.value.bill,
-      materials: this.formGroupUser.value.materials
+      materials: this.formGroupUser.value.materials,
+      economicMovement: this.formGroupUser.value.economicMovement,
     };
     this.agregar(data);
   }

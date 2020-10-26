@@ -28,7 +28,6 @@ export class EditarUsuarioComponent implements OnInit {
 
 
   ngOnInit() {
-    this.generalService.abrirSpinner();
     this.route.params.subscribe(params => this.idUser = params['id']);
     this.formGroupUser = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -42,8 +41,7 @@ export class EditarUsuarioComponent implements OnInit {
     this.userService.getUsersById(this.idUser).subscribe(
       res => {
         this.user = res.user;
-        this.generalService.cerrarSpinner();
-      }, err => { this.generalService.cerrarSpinner(); });
+      }, err => { });
   }
 
   captureInformation() {
@@ -59,15 +57,12 @@ export class EditarUsuarioComponent implements OnInit {
   }
 
   updateUser(data) {
-    this.generalService.abrirSpinner();
     this.userService.updateUser(data).subscribe(
       res => {
         this.router.navigate(['/usuario']);
         this.generalService.abrirMensaje('Agregado Correctamente', 'success');
-        this.generalService.cerrarSpinner();
       }, err => {
         this.generalService.abrirMensaje('Ocurrio un Error', 'error');
-        this.generalService.cerrarSpinner();
       });
 
   }
