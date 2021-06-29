@@ -58,6 +58,7 @@ import { DeleteRequestComponent } from './components/request/delete-request/dele
 import { RequestComponent } from './components/request/request/request.component';
 import { CommentaryComponent } from './components/request/commentary/commentary/commentary.component';
 import { DetailRequestComponent } from './components/request/detail-request/detail-request.component';
+import { CanActivateRolAuthGuard } from './services/canActivateServiceRol';
 
 
 
@@ -122,6 +123,7 @@ import { DetailRequestComponent } from './components/request/detail-request/deta
   providers: [
     DatePipe,
     CanActivateViaAuthGuard,
+    CanActivateRolAuthGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
 

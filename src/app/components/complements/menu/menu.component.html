@@ -23,8 +23,8 @@
                 <strong>  Requerimientos</strong>
             </a>
         </li>
-        <hr class="uk-divider-icon">
-        <li style="text-align: center;">
+        <hr class="uk-divider-icon" *ngxPermissionsOnly="['Administrador']">
+        <li style="text-align: center;" *ngxPermissionsOnly="['Administrador']">
             <a routerLink="/usuario" routerLinkActive="active">
                 <i class="fas fa-users"></i>
                 <strong>  Usuarios</strong>

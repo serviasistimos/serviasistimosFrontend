@@ -40,20 +40,17 @@ import { RequestComponent } from './components/request/request/request.component
 
 import { CommentaryComponent } from './components/request/commentary/commentary/commentary.component';
 import { DetailRequestComponent } from './components/request/detail-request/detail-request.component';
-
-
-
-
+import { CanActivateRolAuthGuard } from './services/canActivateServiceRol';
 
 
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: '', component: LoginComponent },
-  { path: 'usuario', component: UsuarioComponent },
-  { path: 'usuario/agregar', component: AgregarUsuarioComponent },
-  { path: 'usuario/eliminar/:id', component: EliminarUsuarioComponent, canActivate: [CanActivateViaAuthGuard] },
-  { path: 'usuario/editar/:id', component: EditarUsuarioComponent, canActivate: [CanActivateViaAuthGuard] },
+  { path: 'usuario', component: UsuarioComponent, canActivate: [CanActivateRolAuthGuard, CanActivateViaAuthGuard] },
+  { path: 'usuario/agregar', component: AgregarUsuarioComponent, canActivate: [CanActivateRolAuthGuard, CanActivateViaAuthGuard] },
+  { path: 'usuario/eliminar/:id', component: EliminarUsuarioComponent, canActivate: [CanActivateViaAuthGuard, CanActivateRolAuthGuard] },
+  { path: 'usuario/editar/:id', component: EditarUsuarioComponent, canActivate: [CanActivateViaAuthGuard, CanActivateRolAuthGuard] },
 
   { path: 'costumer', component: CostumerComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'costumer/add', component: AddCostumerComponent, canActivate: [CanActivateViaAuthGuard] },

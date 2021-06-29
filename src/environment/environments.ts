@@ -1,5 +1,5 @@
 export enum Environment {
-    BaseURL = 'https://serviasistimosbackend.herokuapp.com/',
+    BaseURL = 'http://serviasistimosbackend.herokuapp.com/',
     clientStorageType = 'SESSION',
     clientEncryptionStorageValue = 'SERVIASISTIMOS',
 }

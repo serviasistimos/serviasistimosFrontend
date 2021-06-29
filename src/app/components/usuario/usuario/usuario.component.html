@@ -83,7 +83,7 @@
       Editar Usuario
     </div>
   </ng-template>
-  <ng-template shContextMenuItem *ngIf="user._id !== idUser">
+  <ng-template shContextMenuItem>
     <div routerLink="/usuario/eliminar/{{idUser}}">
       <span uk-icon="icon: trash"></span>
       Eliminar Usuario

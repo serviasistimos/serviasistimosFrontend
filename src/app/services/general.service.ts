@@ -73,4 +73,5 @@ export class GeneralService {
     });
     FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
   }
+
 }

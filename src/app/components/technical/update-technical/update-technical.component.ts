@@ -37,7 +37,9 @@ export class UpdateTechnicalComponent implements OnInit {
       phone: ['', Validators.required],
       specialty: ['', Validators.required],
       numberBill: ['', Validators.required],
-      bank: ['', Validators.required]
+      bank: ['', Validators.required],
+      department: ['', Validators.required],
+      city: ['', Validators.required]
     });
     this.getTechnical();
   }
@@ -60,7 +62,9 @@ export class UpdateTechnicalComponent implements OnInit {
       phone: this.formGroupUser.value.phone,
       specialty: this.formGroupUser.value.specialty,
       numberBill: this.formGroupUser.value.numberBill,
-      bank: this.formGroupUser.value.bank
+      bank: this.formGroupUser.value.bank,
+      department: this.formGroupUser.value.department,
+      city: this.formGroupUser.value.city,
     };
     this.updateTechnical(data);
   }

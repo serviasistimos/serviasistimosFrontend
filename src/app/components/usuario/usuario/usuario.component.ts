@@ -18,7 +18,6 @@ export class UsuarioComponent implements OnInit {
     private readonly encryptService: EncryptService) {
     this.idUser = 0;
     this.user = this.encryptService.getValue().user;
-    console.log(this.user);
   }
 
 

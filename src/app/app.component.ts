@@ -21,6 +21,7 @@ export class AppComponent {
   ) {
 
     this.dataUser();
+    this.permisos();
   }
 
   public dataUser() {
@@ -28,15 +29,10 @@ export class AppComponent {
     this.user = this.encryptService.getValue();
   }
 
-
-  // permisos(): void {
-  //   if (this.loginstatus ===  'true') {
-  //     const perm = ['ADMIN', 'LIDER', 'USUARIO', 'VISITANTE'];
-  //     this.permissionsService.loadPermissions(perm);
-  //     const currper = GeneralService.LOGINDATA['rol'];
-  //     const permissions = [currper];
-  //     this.permissionsService.loadPermissions(permissions);
-  //   }
-  // }
+  // const perm = ['Administrador', 'Usuario'];
+  permisos(): void {
+    const permissions = this.encryptService.getValue();
+    this.permissionsService.loadPermissions([permissions.user.role]);
+  }
 
 }
