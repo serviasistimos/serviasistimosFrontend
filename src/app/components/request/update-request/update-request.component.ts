@@ -10,6 +10,7 @@ import { TechnicalService } from 'src/app/services/techicalService';
 import { EncryptService } from 'src/app/services/encrypt.service';
 import { User } from 'src/app/models/user';
 import { InsuranceService } from 'src/app/services/insuranceService';
+import { UserService } from 'src/app/services/userService';
 
 @Component({
   selector: 'app-update-request',
@@ -36,7 +37,8 @@ export class UpdateRequestComponent implements OnInit {
     private readonly costumerService: CostumerService,
     private readonly technicalService: TechnicalService,
     private readonly encryptService: EncryptService,
-    private readonly insuranceService: InsuranceService
+    private readonly insuranceService: InsuranceService,
+    private readonly userService: UserService
   ) {
     this.user = new User();
     this.request = new Object();
@@ -170,6 +172,7 @@ export class UpdateRequestComponent implements OnInit {
       }, err => {
         this.generalService.abrirMensaje('Error de Servidor', 'error');
       });
-
   }
+
+
 }

@@ -1,10 +1,10 @@
 <div class="uk-section-small uk-section-default header">
   <div class="uk-container uk-container-large">
-    <h1><span class="ion-speedometer"></span> Editar Seguro</h1>
+    <h1><span class="ion-speedometer"></span> Editar Polizas</h1>
     <ul class="uk-breadcrumb">
       <li><a routerLink="">Inicio</a></li>
-      <li><a routerLink="/insurance">Seguros</a></li>
-      <li><span>Editar Seguro</span></li>
+      <li><a routerLink="/insurance">Polizas</a></li>
+      <li><span>Editar Poliza</span></li>
     </ul>
   </div>
 </div>
@@ -18,7 +18,7 @@
         <form class="uk-grid-small" [formGroup]="formGroupUser" uk-grid  (ngSubmit)="captureInformation()">
 
           <div class="uk-width-1-1@s">
-            <label class="uk-form-label" for="form-stacked-text">Nombre Seguro</label>
+            <label class="uk-form-label" for="form-stacked-text">Nombre Poliza</label>
             <input class="uk-input" type="text" [(ngModel)]="insurance.nameInsurance" formControlName="name"/>
           </div>
 

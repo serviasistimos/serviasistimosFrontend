@@ -16,7 +16,7 @@ export class UpdateServiceComponent implements OnInit {
   public idUser: any;
   public idService: any;
   public service: any;
-
+  public nameUser: any;
   constructor(
     private readonly generalService: GeneralService,
     private formBuilder: FormBuilder,
@@ -50,8 +50,9 @@ export class UpdateServiceComponent implements OnInit {
 
 
   captureInformation() {
+    this.nameUser = this.idUser.user.name + ' ' + this.idUser.user.lastName + ' ' + this.idUser.user.role;
     const data = {
-      commentary: this.formGroupUser.value.commentary,
+      commentary: this.nameUser + '  ' + this.formGroupUser.value.commentary,
       nameService: this.formGroupUser.value.nameService,
       user: this.idUser.user._id
     };

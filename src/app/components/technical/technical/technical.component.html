@@ -76,20 +76,20 @@
   </div>
 </div>
 
-<div id="floating-button" style="border-radius: 50%;" routerLink="/technical/add">
+<div  *ngxPermissionsOnly="['Administrador']" id="floating-button" style="border-radius: 50%;" routerLink="/technical/add">
   <span class="plus-circle" uk-icon="plus"></span>
 </div>
 
 <!-- Clic derecho -->
 
-<sh-context-menu #menu>
+<sh-context-menu #menu  *ngxPermissionsOnly="['Administrador']">
   <ng-template shContextMenuItem>
     <div routerLink="/technical/update/{{idTechnical}}">
       <span uk-icon="icon: pencil"></span>
       Editar Tecnico
     </div>
   </ng-template>
-  <ng-template shContextMenuItem>
+  <ng-template shContextMenuItem *ngxPermissionsOnly="['Administrador']">
     <div routerLink="/technical/delete/{{idTechnical}}">
       <span uk-icon="icon: trash"></span>
       Eliminar Tecnico

@@ -15,7 +15,7 @@
     <div>
       <div class="uk-card uk-card-default uk-card-body">
 
-        <form class="uk-grid-small" [formGroup]="formGroupUser" uk-grid  (ngSubmit)="captureInformation()">
+        <form class="uk-grid-small" [formGroup]="formGroupUser" uk-grid (ngSubmit)="captureInformation()">
 
 
           <div class="uk-width-1-2@s">
@@ -24,11 +24,11 @@
           </div>
 
           <div class="uk-width-1-2@s">
-            <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
-            <input class="uk-input" type="password" formControlName="password" [(ngModel)]="user.password" />
+            <label class="uk-form-label" for="form-stacked-text">Contraseña (minimo 6 caracteres)</label>
+            <input class="uk-input" type="password" formControlName="password" />
           </div>
 
-          
+
           <div class="uk-width-1-2@s">
             <label class="uk-form-label" for="form-stacked-text">Confirmacion Contraseña</label>
             <input class="uk-input" type="password" formControlName="confirmpassword" />

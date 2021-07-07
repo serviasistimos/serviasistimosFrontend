@@ -15,6 +15,7 @@ export class CommentaryComponent implements OnInit {
   public formGroupUser: FormGroup;
   public idRequest: any;
   public idUser: any;
+  public nameUser: any;
 
   constructor(
     private readonly generalService: GeneralService,
@@ -25,6 +26,7 @@ export class CommentaryComponent implements OnInit {
     private readonly encryptService: EncryptService
   ) {
     this.idUser = this.encryptService.getValue().user;
+    this.nameUser = this.idUser.name + ' ' + this.idUser.lastName + ' ' + this.idUser.role;
   }
 
 
@@ -39,7 +41,7 @@ export class CommentaryComponent implements OnInit {
 
   captureInformation() {
     const data = {
-      commentary: this.formGroupUser.value.commentary,
+      commentary: this.nameUser + ' -------- ' + this.formGroupUser.value.commentary,
       request: this.idRequest,
       user: this.idUser._id
     };
@@ -50,7 +52,7 @@ export class CommentaryComponent implements OnInit {
     this.requestService.addCommentary(data).subscribe(
       res => {
         this.generalService.abrirMensaje('Agregado Correctamente', 'success');
-        this.router.navigate(['/request']);
+        this.router.navigate(['/request/update/', this.idRequest]);
       }, err => {
         this.generalService.abrirMensaje('Ocurrio un Error', 'error');
       });

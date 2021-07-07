@@ -16,6 +16,7 @@ export class AddServiceComponent implements OnInit {
 
   public formGroupUser: FormGroup;
   public idUser: any;
+  public nameUser: any;
 
   constructor(
     private readonly generalService: GeneralService,
@@ -33,13 +34,15 @@ export class AddServiceComponent implements OnInit {
       commentary: ['', Validators.required],
       nameService: ['', Validators.required],
     });
+    console.log(this.idUser.user.name);
   }
 
 
 
   captureInformation() {
+    this.nameUser = this.idUser.user.name + ' ' + this.idUser.user.lastName + ' ' + this.idUser.user.role;
     const data = {
-      commentary: this.formGroupUser.value.commentary,
+      commentary: this.nameUser + '  ' + this.formGroupUser.value.commentary,
       nameService: this.formGroupUser.value.nameService,
       user: this.idUser.user._id
     };

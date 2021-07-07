@@ -52,7 +52,7 @@
                 <th>Tecnico</th>
                 <th>Factura</th>
                 <th>Servicio</th>
-                <th>Comentario</th>
+                <th>Comentario Inicial</th>
                 <th>Valor ServiAsistimos</th>
                 <th>Valor Cliente</th>
                 <th>Materiales</th>
@@ -64,22 +64,18 @@
             <tbody>
               <tr *ngFor="let costu of request | filter:term | paginate: { itemsPerPage: 10, currentPage: p }"
                 [shAttachMenu]="menu" (contextmenu)="leftClick(costu._id)">
-                <td *ngIf="costu.state === 'EN PROGRESO'" style="background-color: rgb(253, 164, 0);">
+                <td *ngIf="costu.state === 'EN GESTION'" style="background-color: rgb(253, 164, 0);">
                   <p style="color: aliceblue;">{{costu.state}}</p>
                 </td>
-                <td *ngIf="costu.state === 'PENDIENTE'" style="background-color: rgb(255, 0, 0);">
+
+                <td *ngIf="costu.state === 'NUEVO'" style="background-color: rgb(255, 0, 0);">
                   <p style="color: aliceblue;">{{costu.state}}</p>
                 </td>
-                <td *ngIf="costu.state === 'VISITA'" style="background-color: rgb(255, 0, 0);">
+
+                <td *ngIf="costu.state === 'FINALIZADO'" style="background-color: rgb(0, 253, 42);">
                   <p style="color: aliceblue;">{{costu.state}}</p>
                 </td>
-                
-                <td *ngIf="costu.state === 'TERMINADO'" style="background-color: rgb(0, 253, 42);">
-                  <p style="color: aliceblue;">{{costu.state}}</p>
-                </td>
-                <td *ngIf="costu.state === 'EFECTIVO'" style="background-color: rgb(0, 253, 42);">
-                  <p style="color: aliceblue;">{{costu.state}}</p>
-                </td>
+
                 <td>{{costu.assistance}}</td>
                 <td> {{costu.address}}</td>
                 <td>{{costu.city}}</td>
