@@ -72,6 +72,10 @@
                   <p style="color: aliceblue;">{{costu.state}}</p>
                 </td>
 
+                <td *ngIf="costu.state === 'ANULADO'" style="background-color: rgb(255, 0, 0);">
+                  <p style="color: aliceblue;">{{costu.state}}</p>
+                </td>
+
                 <td *ngIf="costu.state === 'FINALIZADO'" style="background-color: rgb(0, 253, 42);">
                   <p style="color: aliceblue;">{{costu.state}}</p>
                 </td>
